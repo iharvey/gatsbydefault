@@ -4,14 +4,23 @@ import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { makeStyles } from "@material-ui/core/styles"
 import Chip from "@material-ui/core/Chip"
-import { H2 } from "../components/typo"
-import Layout from "../layouts/layout"
+import Divider from "@material-ui/core/Divider"
 import SEO from "../components/seo"
+import Layout from "../layouts/layout"
+import Markdown from "../utils/Markdown"
+import { H4 } from "../components/typo"
 
 const useStyles = makeStyles(theme => ({
   heading: {
     marginTop: theme.spacing(3),
     marginBottom: theme.spacing(3),
+  },
+  divider: {
+    marginTop: theme.spacing(3),
+    marginBottom: theme.spacing(3),
+  },
+  chip: {
+    marginRight: theme.spacing(1),
   },
 }))
 
@@ -24,35 +33,16 @@ const BlogPost = ({ data }) => {
       <SEO image={image.fixed.src} title={title} />
 
       <div className="blogpost">
-        <H2 className={classes["heading"]}>{title}</H2>
-
         <Img fluid={image.sizes} alt={title} />
-
+        <H4 className={classes.heading}>{title}</H4>
         <div className="tags">
-          {tags && (
-            <div>
-              {tags.map(tag => (
-                <Chip
-                  className={classes["MuiTagChip--01"]}
-                  size="small"
-                  label={tag}
-                  key={`tag__${tag}`}
-                />
-              ))}
-            </div>
-          )}
-
-          {tags.map(tag => (
-            <span className="tag" key={tag}>
-              {tag}
-            </span>
-          ))}
+          {tags && tags.map(tag => <Chip className={classes.chip} size="small" label={tag} key={`tag__${tag}`} />)}
+        </div>
+        <Divider className={classes.divider} />
+        <div>
+          <Markdown>{body.body}</Markdown>
         </div>
 
-        <p
-          className="body-text"
-          dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.html }}
-        />
         <Link to="/blogposts">View more posts</Link>
         <br />
         <Link to="/">{"< Back to Home"}</Link>
@@ -69,6 +59,7 @@ export const pageQuery = graphql`
       title
       slug
       body {
+        body
         childMarkdownRemark {
           html
         }
@@ -90,9 +81,7 @@ BlogPost.propTypes = {
   data: PropTypes.shape({
     contentfulBlogPost: PropTypes.shape({
       body: PropTypes.shape({
-        childMarkdownRemark: PropTypes.shape({
-          html: PropTypes.string,
-        }),
+        body: PropTypes.string,
       }),
       image: PropTypes.shape({
         fixed: PropTypes.shape({
