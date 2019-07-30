@@ -5,6 +5,7 @@ import Img from "gatsby-image"
 import Card from "@material-ui/core/Card"
 import CardContent from "@material-ui/core/CardContent"
 import Divider from "@material-ui/core/Divider"
+import { H6, Body2, Overline } from "../components/typo"
 
 const useStyles = makeStyles(theme => ({
   "MuiEngagementCard--01": {
@@ -51,10 +52,10 @@ const BlogCard = ({ props }) => {
       >
         <Img fluid={node.image.sizes} alt={node.title} />
         <CardContent>
-          <h5>{node.title}</h5>
-          <p>{node.body.childMarkdownRemark.excerpt}</p>
-          <Divider light />
-          <span><em>Created: {node.createdAt}</em></span>
+          <H6>{node.title}</H6>
+          <Body2>{node.body.childMarkdownRemark.excerpt}</Body2>
+          {/* <Divider light />
+          <Overline>Created: {node.createdAt}</Overline> */}
         </CardContent>
       </Card>
     </>

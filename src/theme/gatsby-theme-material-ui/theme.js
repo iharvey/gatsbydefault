@@ -1,13 +1,13 @@
 import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles"
 import { red, amber, indigo } from "@material-ui/core/colors"
 
-const headerFont = "'Work Sans', sans-serif"
-const bodyFont = "'Quattrocento Sans', sans-serif;"
+export const headerFont = "'Work Sans', sans-serif"
+export const bodyFont = "'Quattrocento Sans', sans-serif;"
 
 const defaultTheme = createMuiTheme({
   typography: {
     fontFamily: bodyFont,
-    htmlFontSize: 14,
+    htmlFontSize: 16,
     fontSize: 14,
     h1: {
       fontFamily: headerFont,

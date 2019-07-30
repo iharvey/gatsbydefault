@@ -5,39 +5,66 @@ import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
 import IconButton from "@material-ui/core/IconButton"
 import MenuIcon from "@material-ui/icons/Menu"
-import { H1 } from "../components/typo"
+import { H4, H5 } from "../components/typo"
 
 const useStyles = makeStyles(theme => ({
-  root: {
+  header: {
     flexGrow: 1,
+    marginBottom: theme.spacing(2),
   },
-  title: {
+  menuHome: {
     flexGrow: 1,
     textDecoration: "none",
     color: "inherit",
-
-    "& h1": {
-      marginBottom: theme.spacing(3),
-      marginTop: theme.spacing(3),
-    },
+  },
+  menuButton: {
+    marginRight: theme.spacing(3),
+    textDecoration: "none",
+    color: "inherit",
+  },
+  titleLeft: {
+    marginLeft: "auto",
+  },
+  menuBurger: {
+    marginLeft: theme.spacing(1),
   },
 }))
+
+const headerLinks = [
+  {
+    url: "/",
+    name: "Home",
+  },
+  {
+    url: "/blogposts",
+    name: "Posts",
+  },
+]
 
 export default function ButtonAppBar() {
   const classes = useStyles()
 
   return (
-    <div className={classes.root}>
+    <header className={classes.header}>
       <AppBar position="static">
         <Toolbar>
-          <Link to="/" className={classes.title}>
-            <H1>Header</H1>
+          <Link to="/" className={classes.menuHome}>
+            <H4>Header</H4>
           </Link>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="Menu">
+
+          <span className={classes.titleLeft} />
+
+          {headerLinks.map(link => (
+            <Link key={link.url} to={link.url} className={classes.menuButton}>
+              <H5>{link.name}</H5>
+            </Link>
+          ))}
+
+          <IconButton edge="start" className={classes.menuBurger} color="inherit" aria-label="Menu">
             <MenuIcon />
           </IconButton>
         </Toolbar>
       </AppBar>
-    </div>
+    </header>
   )
 }
