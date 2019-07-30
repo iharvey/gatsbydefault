@@ -1,9 +1,10 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { makeStyles } from "@material-ui/core/styles"
 import Chip from "@material-ui/core/Chip"
-import Typography from "@material-ui/core/Typography"
+import { H2 } from "../components/typo"
 import Layout from "../layouts/layout"
 import SEO from "../components/seo"
 
@@ -23,12 +24,11 @@ const BlogPost = ({ data }) => {
       <SEO image={image.fixed.src} title={title} />
 
       <div className="blogpost">
-        <h2 className={classes["heading"]}>{title}</h2>
+        <H2 className={classes["heading"]}>{title}</H2>
 
         <Img fluid={image.sizes} alt={title} />
 
         <div className="tags">
-
           {tags && (
             <div>
               {tags.map(tag => (
@@ -85,3 +85,33 @@ export const pageQuery = graphql`
     }
   }
 `
+
+BlogPost.propTypes = {
+  data: PropTypes.shape({
+    contentfulBlogPost: PropTypes.shape({
+      body: PropTypes.shape({
+        childMarkdownRemark: PropTypes.shape({
+          html: PropTypes.string,
+        }),
+      }),
+      image: PropTypes.shape({
+        fixed: PropTypes.shape({
+          src: PropTypes.string,
+        }),
+        sizes: PropTypes.shape({
+          aspectRatio: PropTypes.number,
+          base64: PropTypes.string,
+          sizes: PropTypes.string,
+          src: PropTypes.string,
+          srcSet: PropTypes.string,
+          srcSetWebp: PropTypes.string,
+          srcWebp: PropTypes.string,
+          tracedSVG: PropTypes.string,
+        }),
+      }),
+      slug: PropTypes.string,
+      tags: PropTypes.arrayOf(PropTypes.string),
+      title: PropTypes.string,
+    }),
+  }),
+}

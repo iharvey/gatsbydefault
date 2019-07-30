@@ -5,6 +5,7 @@ import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
 import IconButton from "@material-ui/core/IconButton"
 import MenuIcon from "@material-ui/icons/Menu"
+import { H1 } from "../components/typo"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -13,11 +14,11 @@ const useStyles = makeStyles(theme => ({
   title: {
     flexGrow: 1,
     textDecoration: "none",
-    // "& h1": {
-    //   marginBottom: 0,
-    // },
-    "&:hover": {
-      color: "inherit",
+    color: "inherit",
+
+    "& h1": {
+      marginBottom: theme.spacing(3),
+      marginTop: theme.spacing(3),
     },
   },
 }))
@@ -30,14 +31,9 @@ export default function ButtonAppBar() {
       <AppBar position="static">
         <Toolbar>
           <Link to="/" className={classes.title}>
-            <h1>Header</h1>
+            <H1>Header</H1>
           </Link>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="Menu"
-          >
+          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="Menu">
             <MenuIcon />
           </IconButton>
         </Toolbar>

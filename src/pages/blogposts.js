@@ -1,12 +1,13 @@
 import React from "react"
+import PropTypes from "prop-types"
+import { graphql } from "gatsby"
 import { makeStyles } from "@material-ui/core/styles"
 import { Link } from "gatsby"
 import Grid from "@material-ui/core/Grid"
-
+import { H3 } from "../components/typo"
 import Layout from "../layouts/layout"
 import SEO from "../components/seo"
-import BlogCard from "../components/blog-card"
-import { rhythm } from "../theme/typography"
+import BlogCard from "../containers/blog-card"
 
 const useStyles = makeStyles(theme => ({
   heading: {
@@ -30,7 +31,8 @@ const SecondPage = ({ data }) => {
     <>
       <Layout>
         <SEO title="Page two" />
-        <h3 className={classes["heading"]}>Welcome to page 2</h3>
+
+        <H3 className={classes["heading"]}>Welcome to page 2</H3>
 
         <Grid container spacing={2}>
           {data.allContentfulBlogPost.edges.map(({ node }, index) => (
@@ -82,3 +84,15 @@ export const postQuery = graphql`
     }
   }
 `
+
+SecondPage.propTypes = {
+  data: PropTypes.shape({
+    allContentfulBlogPost: PropTypes.shape({
+      edges: PropTypes.arrayOf(
+        PropTypes.shape({
+          node: PropTypes.any,
+        })
+      ),
+    }),
+  }),
+}

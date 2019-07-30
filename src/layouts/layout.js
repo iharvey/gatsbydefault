@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from "gatsby"
 import Container from "@material-ui/core/Container"
 
 import Header from "../theme/gatsby-theme-material-ui-layout/layout/header"
-import Footer from "../components/footer"
+import Footer from "../containers/footer"
 
 const Layout = ({ children }) => (
   <StaticQuery

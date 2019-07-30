@@ -673,8 +673,8 @@
     is-buffer "^1.1.5"
 
 "@emotion/hash@^0.7.1":
-  version "0.7.1"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/@emotion/hash/-/hash-0.7.1.tgz#9833722341379fb7d67f06a4b00ab3c37913da53"
+  version "0.7.2"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/@emotion/hash/-/hash-0.7.2.tgz#53211e564604beb9befa7a4400ebf8147473eeef"
 
 "@gatsbyjs/relay-compiler@2.0.0-printer-fix.2":
   version "2.0.0-printer-fix.2"
@@ -697,9 +697,17 @@
     signedsource "^1.0.0"
     yargs "^9.0.0"
 
+"@hapi/address@2.x.x":
+  version "2.0.0"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/@hapi/address/-/address-2.0.0.tgz#9f05469c88cb2fd3dcd624776b54ee95c312126a"
+
 "@hapi/hoek@6.x.x":
   version "6.2.4"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/@hapi/hoek/-/hoek-6.2.4.tgz#4b95fbaccbfba90185690890bdf1a2fbbda10595"
+
+"@hapi/hoek@8.x.x":
+  version "8.0.2"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/@hapi/hoek/-/hoek-8.0.2.tgz#f63a5ff00e891a4e7aa98f11119f9515c6672032"
 
 "@hapi/joi@^14.0.0":
   version "14.5.0"
@@ -710,15 +718,24 @@
     "@hapi/topo" "3.x.x"
     isemail "3.x.x"
 
+"@hapi/joi@^15.1.0":
+  version "15.1.0"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/@hapi/joi/-/joi-15.1.0.tgz#940cb749b5c55c26ab3b34ce362e82b6162c8e7a"
+  dependencies:
+    "@hapi/address" "2.x.x"
+    "@hapi/hoek" "6.x.x"
+    "@hapi/marker" "1.x.x"
+    "@hapi/topo" "3.x.x"
+
 "@hapi/marker@1.x.x":
   version "1.0.0"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/@hapi/marker/-/marker-1.0.0.tgz#65b0b2b01d1be06304886ce9b4b77b1bfb21a769"
 
 "@hapi/topo@3.x.x":
-  version "3.1.0"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/@hapi/topo/-/topo-3.1.0.tgz#5c47cd9637c2953db185aa957a27bcb2a8b7a6f8"
+  version "3.1.2"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/@hapi/topo/-/topo-3.1.2.tgz#57cc1317be1a8c5f47c124f9b0e3c49cd78424d2"
   dependencies:
-    "@hapi/hoek" "6.x.x"
+    "@hapi/hoek" "8.x.x"
 
 "@jimp/bmp@^0.6.4":
   version "0.6.4"
@@ -945,68 +962,59 @@
   dependencies:
     core-js "^2.5.7"
 
-"@material-ui/core@^4.0.2":
-  version "4.1.2"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/@material-ui/core/-/core-4.1.2.tgz#395eeeb7e24d77bec58f586577221617a5b3d368"
+"@material-ui/core@^4.0.0-rc.0":
+  version "4.0.0-rc.0"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/@material-ui/core/-/core-4.0.0-rc.0.tgz#313ba18cdf4baeaa6c2efb1e38a88ac5b064dce4"
   dependencies:
     "@babel/runtime" "^7.2.0"
-    "@material-ui/react-transition-group" "^4.2.0"
-    "@material-ui/styles" "^4.1.2"
-    "@material-ui/system" "^4.3.0"
-    "@material-ui/types" "^4.1.1"
-    "@material-ui/utils" "^4.1.0"
+    "@material-ui/styles" "^4.0.0-rc.0"
+    "@material-ui/system" "^4.0.0-rc.0"
+    "@material-ui/types" "^4.0.0-rc.0"
+    "@material-ui/utils" "^4.0.0-rc.0"
     "@types/react-transition-group" "^2.0.16"
     clsx "^1.0.2"
-    convert-css-length "^2.0.0"
+    convert-css-length "^1.0.2"
+    csstype "^2.5.2"
     debounce "^1.1.0"
     deepmerge "^3.0.0"
     hoist-non-react-statics "^3.2.1"
-    is-plain-object "^3.0.0"
-    normalize-scroll-left "^0.2.0"
+    is-plain-object "^2.0.4"
+    normalize-scroll-left "^0.1.2"
     popper.js "^1.14.1"
     prop-types "^15.7.2"
     react-event-listener "^0.6.6"
+    react-transition-group "^4.0.0"
     warning "^4.0.1"
 
-"@material-ui/icons@^4.0.1":
-  version "4.2.1"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/@material-ui/icons/-/icons-4.2.1.tgz#fe2f1c4f60c24256d244a69d86d0c00e8ed4037e"
+"@material-ui/icons@^4.0.0-rc.0":
+  version "4.0.0-rc.0"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/@material-ui/icons/-/icons-4.0.0-rc.0.tgz#c7895049ffcf452d74327cc096da7b80d1352d6f"
   dependencies:
     "@babel/runtime" "^7.2.0"
 
-"@material-ui/react-transition-group@^4.2.0":
-  version "4.2.0"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/@material-ui/react-transition-group/-/react-transition-group-4.2.0.tgz#afec833bbcc79f05a9b4d4828b3e07965cc7e321"
-  dependencies:
-    "@babel/runtime" "^7.4.5"
-    dom-helpers "^3.4.0"
-    loose-envify "^1.4.0"
-    prop-types "^15.6.2"
-
-"@material-ui/styles@^4.0.2", "@material-ui/styles@^4.1.2":
-  version "4.1.2"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/@material-ui/styles/-/styles-4.1.2.tgz#f22cb0d8f60a5e4a4b92f1ffb4b56f825ff89034"
+"@material-ui/styles@^4.0.0-rc.0":
+  version "4.0.0-rc.0"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/@material-ui/styles/-/styles-4.0.0-rc.0.tgz#c805bdd2439bee0259a2b2d24fc7fc4fce4a1cd3"
   dependencies:
     "@babel/runtime" "^7.2.0"
     "@emotion/hash" "^0.7.1"
-    "@material-ui/types" "^4.1.1"
-    "@material-ui/utils" "^4.1.0"
+    "@material-ui/types" "^4.0.0-rc.0"
+    "@material-ui/utils" "^4.0.0-rc.0"
     clsx "^1.0.2"
-    csstype "^2.5.2"
     deepmerge "^3.0.0"
     hoist-non-react-statics "^3.2.1"
-    jss "10.0.0-alpha.17"
-    jss-plugin-camel-case "10.0.0-alpha.17"
-    jss-plugin-default-unit "10.0.0-alpha.17"
-    jss-plugin-global "10.0.0-alpha.17"
-    jss-plugin-nested "10.0.0-alpha.17"
-    jss-plugin-props-sort "10.0.0-alpha.17"
-    jss-plugin-rule-value-function "10.0.0-alpha.17"
-    jss-plugin-vendor-prefixer "10.0.0-alpha.17"
+    jss "^10.0.0-alpha.16"
+    jss-plugin-camel-case "^10.0.0-alpha.16"
+    jss-plugin-default-unit "^10.0.0-alpha.16"
+    jss-plugin-global "^10.0.0-alpha.16"
+    jss-plugin-nested "^10.0.0-alpha.16"
+    jss-plugin-props-sort "^10.0.0-alpha.16"
+    jss-plugin-rule-value-function "^10.0.0-alpha.16"
+    jss-plugin-vendor-prefixer "^10.0.0-alpha.16"
     prop-types "^15.7.2"
     warning "^4.0.1"
 
-"@material-ui/system@^4.3.0":
+"@material-ui/system@^4.0.0-rc.0":
   version "4.3.0"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/@material-ui/system/-/system-4.3.0.tgz#6812049bf9257f8936c5de8f18b7142a67048247"
   dependencies:
@@ -1015,13 +1023,13 @@
     prop-types "^15.7.2"
     warning "^4.0.1"
 
-"@material-ui/types@^4.1.1":
+"@material-ui/types@^4.0.0-rc.0":
   version "4.1.1"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/@material-ui/types/-/types-4.1.1.tgz#b65e002d926089970a3271213a3ad7a21b17f02b"
   dependencies:
     "@types/react" "*"
 
-"@material-ui/utils@^4.1.0":
+"@material-ui/utils@^4.0.0-rc.0":
   version "4.1.0"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/@material-ui/utils/-/utils-4.1.0.tgz#45fd6698db49f3528fe45c922c496235021d76ec"
   dependencies:
@@ -1532,7 +1540,7 @@ arrify@^1.0.1:
   version "1.0.1"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/arrify/-/arrify-1.0.1.tgz#898508da2226f380df904728456849c1501a4b0d"
 
-asap@~2.0.3:
+asap@^2.0.0, asap@~2.0.3:
   version "2.0.6"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/asap/-/asap-2.0.6.tgz#e50347611d7e690943208bbdafebcbc2fb866d46"
 
@@ -1650,6 +1658,17 @@ babel-core@7.0.0-bridge.0:
   version "7.0.0-bridge.0"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/babel-core/-/babel-core-7.0.0-bridge.0.tgz#95a492ddd90f9b4e9a4a1da14eb335b87b634ece"
 
+babel-eslint@^10.0.2:
+  version "10.0.2"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/babel-eslint/-/babel-eslint-10.0.2.tgz#182d5ac204579ff0881684b040560fdcc1558456"
+  dependencies:
+    "@babel/code-frame" "^7.0.0"
+    "@babel/parser" "^7.0.0"
+    "@babel/traverse" "^7.0.0"
+    "@babel/types" "^7.0.0"
+    eslint-scope "3.7.1"
+    eslint-visitor-keys "^1.0.0"
+
 babel-eslint@^9.0.0:
   version "9.0.0"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/babel-eslint/-/babel-eslint-9.0.0.tgz#7d9445f81ed9f60aff38115f838970df9f2b6220"
@@ -1749,15 +1768,16 @@ babel-preset-fbjs@^3.1.2:
     "@babel/plugin-transform-template-literals" "^7.0.0"
     babel-plugin-syntax-trailing-function-commas "^7.0.0-beta.0"
 
-babel-preset-gatsby@^0.2.0:
-  version "0.2.0"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/babel-preset-gatsby/-/babel-preset-gatsby-0.2.0.tgz#3781c2a21b12e426f49cd5ca7396649640a1957f"
+babel-preset-gatsby@^0.2.1:
+  version "0.2.1"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/babel-preset-gatsby/-/babel-preset-gatsby-0.2.1.tgz#c6a5da3efdcaca5be0ea551704d50246c8af049e"
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.0.0"
     "@babel/plugin-syntax-dynamic-import" "^7.0.0"
     "@babel/plugin-transform-runtime" "^7.0.0"
     "@babel/preset-env" "^7.4.1"
     "@babel/preset-react" "^7.0.0"
+    "@babel/runtime" "^7.4.5"
     babel-plugin-macros "^2.4.2"
 
 babel-runtime@^6.26.0:
@@ -2263,8 +2283,8 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000844, caniuse-lite@^1.0.30000971, caniuse-lite@^1.0.30000975:
-  version "1.0.30000977"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/caniuse-lite/-/caniuse-lite-1.0.30000977.tgz#7da2ca14cae2fddb368c05c57ab4a529afd658ff"
+  version "1.0.30000979"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/caniuse-lite/-/caniuse-lite-1.0.30000979.tgz#92f16d00186a6cf20d6c5711bb6e042a3d667029"
 
 capture-stack-trace@^1.0.0:
   version "1.0.1"
@@ -2582,14 +2602,6 @@ commondir@^1.0.1:
   version "1.0.1"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/commondir/-/commondir-1.0.1.tgz#ddd800da0c66127393cca5950ea968a3aaf1253b"
 
-compass-vertical-rhythm@^1.4.5:
-  version "1.4.5"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/compass-vertical-rhythm/-/compass-vertical-rhythm-1.4.5.tgz#4baa8d7068fda164d3675d706775d7547e8750f5"
-  dependencies:
-    convert-css-length "^1.0.1"
-    object-assign "^4.1.0"
-    parse-unit "^1.0.1"
-
 component-bind@1.0.0:
   version "1.0.0"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/component-bind/-/component-bind-1.0.0.tgz#00c608ab7dcd93897c0009651b1d3a8e1e73bbd1"
@@ -2733,16 +2745,9 @@ contentful@^6.1.0:
     json-stringify-safe "^5.0.1"
     lodash "^4.17.5"
 
-convert-css-length@^1.0.1:
+convert-css-length@^1.0.2:
   version "1.0.2"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/convert-css-length/-/convert-css-length-1.0.2.tgz#32f38a8ac55d78372ff43562532564366c871ccc"
-  dependencies:
-    console-polyfill "^0.1.2"
-    parse-unit "^1.0.1"
-
-convert-css-length@^2.0.0:
-  version "2.0.0"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/convert-css-length/-/convert-css-length-2.0.0.tgz#0c60ff686e70625ef7f3fd305a2f61f33a96c289"
   dependencies:
     console-polyfill "^0.1.2"
     parse-unit "^1.0.1"
@@ -3015,7 +3020,7 @@ css-vendor@^0.3.8:
   dependencies:
     is-in-browser "^1.0.2"
 
-css-vendor@^2.0.1:
+css-vendor@^2.0.5:
   version "2.0.5"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/css-vendor/-/css-vendor-2.0.5.tgz#949c58fd5307e79a9417daa0939506f0e5d0a187"
   dependencies:
@@ -3087,7 +3092,7 @@ cssnano-util-same-parent@^4.0.0:
   version "4.0.1"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/cssnano-util-same-parent/-/cssnano-util-same-parent-4.0.1.tgz#574082fb2859d2db433855835d9a8456ea18bbf3"
 
-cssnano@^4.1.0:
+cssnano@^4.1.10:
   version "4.1.10"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/cssnano/-/cssnano-4.1.10.tgz#0ac41f0b13d13d465487e111b778d42da631b8b2"
   dependencies:
@@ -3172,6 +3177,10 @@ debug@^4.0.1, debug@^4.1.0, debug@^4.1.1, debug@~4.1.0:
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/debug/-/debug-4.1.1.tgz#3b72260255109c6b589cee050f1d516139664791"
   dependencies:
     ms "^2.1.1"
+
+debuglog@^1.0.1:
+  version "1.0.1"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/debuglog/-/debuglog-1.0.1.tgz#aa24ffb9ac3df9a2351837cfb2d279360cd78492"
 
 decamelize@^1.1.1, decamelize@^1.1.2, decamelize@^1.2.0:
   version "1.2.0"
@@ -3394,6 +3403,13 @@ devcert-san@^0.3.3:
     tmp "^0.0.31"
     tslib "^1.6.0"
 
+dezalgo@^1.0.0:
+  version "1.0.3"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/dezalgo/-/dezalgo-1.0.3.tgz#7f742de066fc748bc8db820569dddce49bf0d456"
+  dependencies:
+    asap "^2.0.0"
+    wrappy "1"
+
 diffie-hellman@^5.0.0:
   version "5.0.3"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/diffie-hellman/-/diffie-hellman-5.0.3.tgz#40e8ee98f55a2149607146921c63e1ae5f3d2875"
@@ -3574,12 +3590,12 @@ ee-first@1.1.1:
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
 
 electron-to-chromium@^1.3.164, electron-to-chromium@^1.3.47:
-  version "1.3.173"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/electron-to-chromium/-/electron-to-chromium-1.3.173.tgz#275b9ba235447b95fc3204d32ca2c5a8bf2ca599"
+  version "1.3.185"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/electron-to-chromium/-/electron-to-chromium-1.3.185.tgz#36368514eb719632a91435f3c9f57c98b47d81de"
 
 elliptic@^6.0.0:
-  version "6.4.1"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/elliptic/-/elliptic-6.4.1.tgz#c2d0b7776911b86722c632c3c06c60f2f819939a"
+  version "6.5.0"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/elliptic/-/elliptic-6.5.0.tgz#2b8ed4c891b7de3200e14412a5b8248c7af505ca"
   dependencies:
     bn.js "^4.4.0"
     brorand "^1.0.1"
@@ -3798,7 +3814,7 @@ eslint-plugin-graphql@^3.0.3:
     graphql-config "^2.0.1"
     lodash "^4.11.1"
 
-eslint-plugin-import@^2.9.0:
+eslint-plugin-import@^2.18.0, eslint-plugin-import@^2.9.0:
   version "2.18.0"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/eslint-plugin-import/-/eslint-plugin-import-2.18.0.tgz#7a5ba8d32622fb35eb9c8db195c2090bd18a3678"
   dependencies:
@@ -3815,9 +3831,10 @@ eslint-plugin-import@^2.9.0:
     resolve "^1.11.0"
 
 eslint-plugin-jsx-a11y@^6.0.3:
-  version "6.2.1"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-6.2.1.tgz#4ebba9f339b600ff415ae4166e3e2e008831cf0c"
+  version "6.2.3"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-6.2.3.tgz#b872a09d5de51af70a97db1eea7dc933043708aa"
   dependencies:
+    "@babel/runtime" "^7.4.5"
     aria-query "^3.0.0"
     array-includes "^3.0.3"
     ast-types-flow "^0.0.7"
@@ -3825,9 +3842,9 @@ eslint-plugin-jsx-a11y@^6.0.3:
     damerau-levenshtein "^1.0.4"
     emoji-regex "^7.0.2"
     has "^1.0.3"
-    jsx-ast-utils "^2.0.1"
+    jsx-ast-utils "^2.2.1"
 
-eslint-plugin-react@^7.8.2:
+eslint-plugin-react@^7.14.2, eslint-plugin-react@^7.8.2:
   version "7.14.2"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/eslint-plugin-react/-/eslint-plugin-react-7.14.2.tgz#94c193cc77a899ac0ecbb2766fbef88685b7ecc1"
   dependencies:
@@ -3941,8 +3958,8 @@ etag@~1.8.1:
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
 
 event-source-polyfill@^1.0.5:
-  version "1.0.5"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/event-source-polyfill/-/event-source-polyfill-1.0.5.tgz#b34be2740a685a8dc65ae750065fc983538ffcfe"
+  version "1.0.7"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/event-source-polyfill/-/event-source-polyfill-1.0.7.tgz#79a0a432e00ef53387309d6213d98332bab0a4ea"
 
 eventemitter3@^3.0.0:
   version "3.1.2"
@@ -4421,8 +4438,8 @@ flat@^4.0.0:
     is-buffer "~2.0.3"
 
 flatted@^2.0.0:
-  version "2.0.0"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/flatted/-/flatted-2.0.0.tgz#55122b6536ea496b4b44893ee2608141d10d9916"
+  version "2.0.1"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/flatted/-/flatted-2.0.1.tgz#69e57caa8f0eacbc281d2e2cb458d46fdb449e08"
 
 flush-write-stream@^1.0.0:
   version "1.1.1"
@@ -4556,12 +4573,13 @@ functional-red-black-tree@^1.0.1:
   version "1.0.1"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
 
-gatsby-cli@^2.7.2:
-  version "2.7.2"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/gatsby-cli/-/gatsby-cli-2.7.2.tgz#202dc123739b03cf748df9177fc53d714471d064"
+gatsby-cli@^2.7.7:
+  version "2.7.7"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/gatsby-cli/-/gatsby-cli-2.7.7.tgz#9d8e8b6a8313ec3d64a752db9c8579332bc13e55"
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/runtime" "^7.0.0"
+    "@hapi/joi" "^15.1.0"
     better-opn "^0.1.4"
     bluebird "^3.5.0"
     chalk "^2.4.2"
@@ -4575,7 +4593,7 @@ gatsby-cli@^2.7.2:
     execa "^0.8.0"
     fs-exists-cached "^1.0.0"
     fs-extra "^4.0.1"
-    gatsby-telemetry "^1.1.0"
+    gatsby-telemetry "^1.1.2"
     hosted-git-info "^2.6.0"
     is-valid-path "^0.1.1"
     lodash "^4.17.10"
@@ -4600,15 +4618,15 @@ gatsby-cli@^2.7.2:
     ink "^2.0.5"
     ink-spinner "^3.0.1"
 
-gatsby-graphiql-explorer@^0.2.0:
-  version "0.2.0"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/gatsby-graphiql-explorer/-/gatsby-graphiql-explorer-0.2.0.tgz#e15aa929212106b96a7e5dea17e9d6aad5215a11"
+gatsby-graphiql-explorer@^0.2.1:
+  version "0.2.1"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/gatsby-graphiql-explorer/-/gatsby-graphiql-explorer-0.2.1.tgz#39acfadd05bac0774be63c2ac1cb628bbd2c905d"
   dependencies:
     "@babel/runtime" "^7.0.0"
 
 gatsby-image@^2.1.4:
-  version "2.2.3"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/gatsby-image/-/gatsby-image-2.2.3.tgz#568342b3254d40fa1ae8150991bb96ca63cad463"
+  version "2.2.4"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/gatsby-image/-/gatsby-image-2.2.4.tgz#d6c8b42feff1252f7d285584b7107a2aae7b394c"
   dependencies:
     "@babel/runtime" "^7.0.0"
     object-fit-images "^3.2.4"
@@ -4635,17 +4653,21 @@ gatsby-page-utils@^0.0.2:
     micromatch "^3.1.10"
     slash "^1.0.0"
 
+gatsby-plugin-eslint@^2.0.5:
+  version "2.0.5"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/gatsby-plugin-eslint/-/gatsby-plugin-eslint-2.0.5.tgz#be02f5aff9b7f4a37927f3f917e82ad9f3d67f09"
+
 gatsby-plugin-manifest@^2.1.1:
-  version "2.2.0"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.2.0.tgz#e16d39bd415026594465e1763cc2abd43729a7d1"
+  version "2.2.1"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.2.1.tgz#89d23587bfddbf3ce606fc353555d372cfc7d432"
   dependencies:
     "@babel/runtime" "^7.0.0"
     semver "^5.6.0"
     sharp "^0.22.1"
 
 gatsby-plugin-material-ui@^2.0.1:
-  version "2.0.1"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/gatsby-plugin-material-ui/-/gatsby-plugin-material-ui-2.0.1.tgz#5871534e710fca5ba370dce3a9a6761c99a6f47f"
+  version "2.1.4"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/gatsby-plugin-material-ui/-/gatsby-plugin-material-ui-2.1.4.tgz#21f7ef710ec29896eaa458820a9da25237052dfd"
   dependencies:
     autoprefixer "^9.5.1"
     clean-css "^4.2.1"
@@ -4661,9 +4683,9 @@ gatsby-plugin-offline@^2.1.3:
     lodash "^4.17.10"
     workbox-build "^3.6.3"
 
-gatsby-plugin-page-creator@^2.1.1:
-  version "2.1.1"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-2.1.1.tgz#0d8493ef7d0614080b93370782f4666a11f7333a"
+gatsby-plugin-page-creator@^2.1.2:
+  version "2.1.2"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-2.1.2.tgz#7e81cf3cd5d051d28fd582e56254d6183479589f"
   dependencies:
     "@babel/runtime" "^7.0.0"
     bluebird "^3.5.0"
@@ -4679,9 +4701,9 @@ gatsby-plugin-react-helmet@^3.0.12:
   dependencies:
     "@babel/runtime" "^7.0.0"
 
-gatsby-plugin-sharp@^2.1.6, gatsby-plugin-sharp@^2.2.1:
-  version "2.2.1"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.2.1.tgz#a2c91e39cf33a958c108f44b71cc01a3a506c63b"
+gatsby-plugin-sharp@^2.1.6, gatsby-plugin-sharp@^2.2.2:
+  version "2.2.2"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.2.2.tgz#cb0702611541a47282059777cd72785f254e876f"
   dependencies:
     "@babel/runtime" "^7.0.0"
     async "^2.1.2"
@@ -4700,23 +4722,17 @@ gatsby-plugin-sharp@^2.1.6, gatsby-plugin-sharp@^2.2.1:
     sharp "^0.22.1"
     svgo "^1.2.0"
 
-gatsby-plugin-typography@^2.3.0:
-  version "2.3.0"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/gatsby-plugin-typography/-/gatsby-plugin-typography-2.3.0.tgz#67e1fa937863b49597feaa6fe2be8e99b25cb4f3"
-  dependencies:
-    "@babel/runtime" "^7.0.0"
-
-gatsby-react-router-scroll@^2.1.0:
-  version "2.1.0"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/gatsby-react-router-scroll/-/gatsby-react-router-scroll-2.1.0.tgz#4aa36e1e5a5d181cb70902ea7e801796b6c32a7e"
+gatsby-react-router-scroll@^2.1.1:
+  version "2.1.1"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/gatsby-react-router-scroll/-/gatsby-react-router-scroll-2.1.1.tgz#715c15689b1715d350f80a32204a0222a2ad6d49"
   dependencies:
     "@babel/runtime" "^7.0.0"
     scroll-behavior "^0.9.9"
     warning "^3.0.0"
 
 gatsby-source-contentful@^2.0.72:
-  version "2.1.3"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/gatsby-source-contentful/-/gatsby-source-contentful-2.1.3.tgz#b6d08b231e2ad8751f846764004327cbf1802144"
+  version "2.1.5"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/gatsby-source-contentful/-/gatsby-source-contentful-2.1.5.tgz#c477129957f028fd6d59d26f521f93f8c78df619"
   dependencies:
     "@babel/runtime" "^7.0.0"
     "@hapi/joi" "^14.0.0"
@@ -4727,16 +4743,16 @@ gatsby-source-contentful@^2.0.72:
     contentful "^6.1.0"
     deep-map "^1.5.0"
     fs-extra "^4.0.2"
-    gatsby-plugin-sharp "^2.2.1"
-    gatsby-source-filesystem "^2.1.1"
+    gatsby-plugin-sharp "^2.2.2"
+    gatsby-source-filesystem "^2.1.2"
     is-online "^7.0.0"
     json-stringify-safe "^5.0.1"
     lodash "^4.17.10"
     qs "^6.4.0"
 
-gatsby-source-filesystem@^2.0.40, gatsby-source-filesystem@^2.1.1:
-  version "2.1.1"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/gatsby-source-filesystem/-/gatsby-source-filesystem-2.1.1.tgz#5f19c527b4b6c43a9f46da8be5b9cc15cb142787"
+gatsby-source-filesystem@^2.0.40, gatsby-source-filesystem@^2.1.2:
+  version "2.1.2"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/gatsby-source-filesystem/-/gatsby-source-filesystem-2.1.2.tgz#b7ce69d4b819924d22f91339b419624cfb3c4f43"
   dependencies:
     "@babel/runtime" "^7.0.0"
     better-queue "^3.8.7"
@@ -4753,9 +4769,9 @@ gatsby-source-filesystem@^2.0.40, gatsby-source-filesystem@^2.1.1:
     valid-url "^1.0.9"
     xstate "^3.1.0"
 
-gatsby-telemetry@^1.1.0:
-  version "1.1.0"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/gatsby-telemetry/-/gatsby-telemetry-1.1.0.tgz#cef74253da13f4c19a62ef11c05ef5351baa2832"
+gatsby-telemetry@^1.1.2:
+  version "1.1.2"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/gatsby-telemetry/-/gatsby-telemetry-1.1.2.tgz#14c63c3035abacc27018966337e4e3bb07787acb"
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/runtime" "^7.0.0"
@@ -4800,8 +4816,8 @@ gatsby-transformer-remark@^2.4.0:
     unist-util-visit "^1.3.0"
 
 gatsby-transformer-sharp@^2.1.21:
-  version "2.2.0"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/gatsby-transformer-sharp/-/gatsby-transformer-sharp-2.2.0.tgz#b48431b8ac19f3d1e8bb90faa54b1e5cbb1af555"
+  version "2.2.1"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/gatsby-transformer-sharp/-/gatsby-transformer-sharp-2.2.1.tgz#5bc9c0d22e04c842df0b098e103d9655e051806d"
   dependencies:
     "@babel/runtime" "^7.0.0"
     bluebird "^3.5.0"
@@ -4812,8 +4828,8 @@ gatsby-transformer-sharp@^2.1.21:
     sharp "^0.22.1"
 
 gatsby@^2.9.6:
-  version "2.10.5"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/gatsby/-/gatsby-2.10.5.tgz#01dca1595d6ce97ae00666594308ad00120479a9"
+  version "2.13.1"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/gatsby/-/gatsby-2.13.1.tgz#af55152ed738cf3918e9b3cc16a7991863da70ce"
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
@@ -4835,7 +4851,7 @@ gatsby@^2.9.6:
     babel-plugin-add-module-exports "^0.2.1"
     babel-plugin-dynamic-import-node "^1.2.0"
     babel-plugin-remove-graphql-queries "^2.7.0"
-    babel-preset-gatsby "^0.2.0"
+    babel-preset-gatsby "^0.2.1"
     better-opn "0.1.4"
     better-queue "^3.8.6"
     bluebird "^3.5.0"
@@ -4867,17 +4883,17 @@ gatsby@^2.9.6:
     event-source-polyfill "^1.0.5"
     express "^4.16.3"
     express-graphql "^0.7.1"
-    fast-levenshtein "~2.0.4"
+    fast-levenshtein "^2.0.6"
     file-loader "^1.1.11"
     flat "^4.0.0"
     fs-exists-cached "1.0.0"
     fs-extra "^5.0.0"
-    gatsby-cli "^2.7.2"
-    gatsby-graphiql-explorer "^0.2.0"
+    gatsby-cli "^2.7.7"
+    gatsby-graphiql-explorer "^0.2.1"
     gatsby-link "^2.2.0"
-    gatsby-plugin-page-creator "^2.1.1"
-    gatsby-react-router-scroll "^2.1.0"
-    gatsby-telemetry "^1.1.0"
+    gatsby-plugin-page-creator "^2.1.2"
+    gatsby-react-router-scroll "^2.1.1"
+    gatsby-telemetry "^1.1.2"
     glob "^7.1.1"
     got "8.0.0"
     graphql "^14.1.1"
@@ -4893,6 +4909,7 @@ gatsby@^2.9.6:
     lodash "^4.17.10"
     md5 "^2.2.1"
     md5-file "^3.1.1"
+    micromatch "^3.1.10"
     mime "^2.2.0"
     mini-css-extract-plugin "^0.4.0"
     mitt "^1.1.2"
@@ -4913,6 +4930,7 @@ gatsby@^2.9.6:
     react-dev-utils "^4.2.3"
     react-error-overlay "^3.0.0"
     react-hot-loader "^4.8.4"
+    read-package-tree "^5.3.1"
     redux "^4.0.0"
     redux-thunk "^2.3.0"
     semver "^5.6.0"
@@ -4924,7 +4942,7 @@ gatsby@^2.9.6:
     stack-trace "^0.0.10"
     string-similarity "^1.2.0"
     style-loader "^0.21.0"
-    terser-webpack-plugin "^1.2.2"
+    terser-webpack-plugin "1.2.4"
     "true-case-path" "^1.0.3"
     type-of "^2.0.1"
     url-loader "^1.0.1"
@@ -5179,8 +5197,8 @@ got@^8.0.0, got@^8.3.1:
     url-to-options "^1.0.1"
 
 graceful-fs@^4.1.10, graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6:
-  version "4.1.15"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/graceful-fs/-/graceful-fs-4.1.15.tgz#ffb703e1066e8a0eeaa4c8b80ba9253eeefbfb00"
+  version "4.2.0"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/graceful-fs/-/graceful-fs-4.2.0.tgz#8d8fdc73977cb04104721cb53666c1ca64cd328b"
 
 "graceful-readlink@>= 1.0.0":
   version "1.0.1"
@@ -5231,8 +5249,8 @@ graphql-type-json@^0.2.4:
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/graphql-type-json/-/graphql-type-json-0.2.4.tgz#545af27903e40c061edd30840a272ea0a49992f9"
 
 graphql@^14.1.1:
-  version "14.3.1"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/graphql/-/graphql-14.3.1.tgz#b3aa50e61a841ada3c1f9ccda101c483f8e8c807"
+  version "14.4.1"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/graphql/-/graphql-14.4.1.tgz#7a7818d3f63f66b9528ba5416b6c88460db62280"
   dependencies:
     iterall "^1.2.2"
 
@@ -5244,10 +5262,6 @@ gray-matter@^4.0.0:
     kind-of "^6.0.2"
     section-matter "^1.0.0"
     strip-bom-string "^1.0.0"
-
-gray-percentage@^2.0.0:
-  version "2.0.0"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/gray-percentage/-/gray-percentage-2.0.0.tgz#b72a274d1b1379104a0050b63b207dc53fe56f99"
 
 gud@^1.0.0:
   version "1.0.0"
@@ -5533,7 +5547,7 @@ http-errors@1.7.2:
     statuses ">= 1.5.0 < 2"
     toidentifier "1.0.0"
 
-http-errors@^1.7.1, http-errors@~1.7.2:
+http-errors@1.7.3, http-errors@^1.7.1, http-errors@~1.7.2:
   version "1.7.3"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/http-errors/-/http-errors-1.7.3.tgz#6c619e4f9c60308c38519498c14fbb10aacebb06"
   dependencies:
@@ -5685,8 +5699,8 @@ import-fresh@^2.0.0:
     resolve-from "^3.0.0"
 
 import-fresh@^3.0.0:
-  version "3.0.0"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/import-fresh/-/import-fresh-3.0.0.tgz#a3d897f420cab0e671236897f75bc14b4885c390"
+  version "3.1.0"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/import-fresh/-/import-fresh-3.1.0.tgz#6d33fa1dcef6df930fae003446f33415af905118"
   dependencies:
     parent-module "^1.0.0"
     resolve-from "^4.0.0"
@@ -5765,8 +5779,8 @@ ink-spinner@^3.0.1:
     prop-types "^15.5.10"
 
 ink@^2.0.5:
-  version "2.2.0"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/ink/-/ink-2.2.0.tgz#8231cbaf03799634cb333ec4e461f50e25e93fc0"
+  version "2.3.0"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/ink/-/ink-2.3.0.tgz#222136be17bb72fc742e19090483e7e0e7dc3690"
   dependencies:
     "@types/react" "^16.8.6"
     arrify "^1.0.1"
@@ -6164,12 +6178,6 @@ is-plain-object@^2.0.1, is-plain-object@^2.0.3, is-plain-object@^2.0.4:
   dependencies:
     isobject "^3.0.1"
 
-is-plain-object@^3.0.0:
-  version "3.0.0"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/is-plain-object/-/is-plain-object-3.0.0.tgz#47bfc5da1b5d50d64110806c199359482e75a928"
-  dependencies:
-    isobject "^4.0.0"
-
 is-png@^1.0.0:
   version "1.1.0"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/is-png/-/is-png-1.1.0.tgz#d574b12bf275c0350455570b0e5b57ab062077ce"
@@ -6299,10 +6307,6 @@ isobject@^2.0.0:
 isobject@^3.0.0, isobject@^3.0.1:
   version "3.0.1"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/isobject/-/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
-
-isobject@^4.0.0:
-  version "4.0.0"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/isobject/-/isobject-4.0.0.tgz#3f1c9155e73b192022a80819bacd0343711697b0"
 
 isomorphic-fetch@^2.1.1:
   version "2.2.1"
@@ -6484,57 +6488,57 @@ jss-nested@^6.0.1:
   dependencies:
     warning "^3.0.0"
 
-jss-plugin-camel-case@10.0.0-alpha.17:
-  version "10.0.0-alpha.17"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/jss-plugin-camel-case/-/jss-plugin-camel-case-10.0.0-alpha.17.tgz#6f7c9d9742e349bb061e53cd9b1c3cb006169a67"
+jss-plugin-camel-case@^10.0.0-alpha.16:
+  version "10.0.0-alpha.22"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/jss-plugin-camel-case/-/jss-plugin-camel-case-10.0.0-alpha.22.tgz#d68c783ad1f9142776df86bca236b51daf6a2318"
   dependencies:
     "@babel/runtime" "^7.3.1"
     hyphenate-style-name "^1.0.3"
-    jss "10.0.0-alpha.17"
+    jss "10.0.0-alpha.22"
 
-jss-plugin-default-unit@10.0.0-alpha.17:
-  version "10.0.0-alpha.17"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/jss-plugin-default-unit/-/jss-plugin-default-unit-10.0.0-alpha.17.tgz#4e3bf6d8e9691a8e05d50b5abf300515eb0f67ee"
+jss-plugin-default-unit@^10.0.0-alpha.16:
+  version "10.0.0-alpha.22"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/jss-plugin-default-unit/-/jss-plugin-default-unit-10.0.0-alpha.22.tgz#26e79d32fbfd2371ce770e85f06b05f008e17649"
   dependencies:
     "@babel/runtime" "^7.3.1"
-    jss "10.0.0-alpha.17"
+    jss "10.0.0-alpha.22"
 
-jss-plugin-global@10.0.0-alpha.17:
-  version "10.0.0-alpha.17"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/jss-plugin-global/-/jss-plugin-global-10.0.0-alpha.17.tgz#13005f6b963aee3c1498fe2bad767967ad2eb838"
+jss-plugin-global@^10.0.0-alpha.16:
+  version "10.0.0-alpha.22"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/jss-plugin-global/-/jss-plugin-global-10.0.0-alpha.22.tgz#cd10d98f6f70cf0cb62bd02b1c4534f428431aa5"
   dependencies:
     "@babel/runtime" "^7.3.1"
-    jss "10.0.0-alpha.17"
+    jss "10.0.0-alpha.22"
 
-jss-plugin-nested@10.0.0-alpha.17:
-  version "10.0.0-alpha.17"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/jss-plugin-nested/-/jss-plugin-nested-10.0.0-alpha.17.tgz#cb1c20cdc81558c164eaa333bbb24c88bef12202"
+jss-plugin-nested@^10.0.0-alpha.16:
+  version "10.0.0-alpha.22"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/jss-plugin-nested/-/jss-plugin-nested-10.0.0-alpha.22.tgz#48f5d3b8498cc78b7555fd92e2065648db696452"
   dependencies:
     "@babel/runtime" "^7.3.1"
-    jss "10.0.0-alpha.17"
+    jss "10.0.0-alpha.22"
     tiny-warning "^1.0.2"
 
-jss-plugin-props-sort@10.0.0-alpha.17:
-  version "10.0.0-alpha.17"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/jss-plugin-props-sort/-/jss-plugin-props-sort-10.0.0-alpha.17.tgz#a49be72b8dc8e2861f8136661c53d130abb07ccd"
+jss-plugin-props-sort@^10.0.0-alpha.16:
+  version "10.0.0-alpha.22"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/jss-plugin-props-sort/-/jss-plugin-props-sort-10.0.0-alpha.22.tgz#f74f3ecfb51cf1963ed5f2aada1a87734390da9a"
   dependencies:
     "@babel/runtime" "^7.3.1"
-    jss "10.0.0-alpha.17"
+    jss "10.0.0-alpha.22"
 
-jss-plugin-rule-value-function@10.0.0-alpha.17:
-  version "10.0.0-alpha.17"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/jss-plugin-rule-value-function/-/jss-plugin-rule-value-function-10.0.0-alpha.17.tgz#45617ccc2d695d77287554e7dbe3b9c37f5f5af4"
+jss-plugin-rule-value-function@^10.0.0-alpha.16:
+  version "10.0.0-alpha.22"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/jss-plugin-rule-value-function/-/jss-plugin-rule-value-function-10.0.0-alpha.22.tgz#100677d57f025226f9df80cd2caf1f6a7df2d8a1"
   dependencies:
     "@babel/runtime" "^7.3.1"
-    jss "10.0.0-alpha.17"
+    jss "10.0.0-alpha.22"
 
-jss-plugin-vendor-prefixer@10.0.0-alpha.17:
-  version "10.0.0-alpha.17"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/jss-plugin-vendor-prefixer/-/jss-plugin-vendor-prefixer-10.0.0-alpha.17.tgz#7bb05076d1a14d20b567231c36e57ebf6cb6625f"
+jss-plugin-vendor-prefixer@^10.0.0-alpha.16:
+  version "10.0.0-alpha.22"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/jss-plugin-vendor-prefixer/-/jss-plugin-vendor-prefixer-10.0.0-alpha.22.tgz#15985f254a4812d8268de8cd64b9327a4feff905"
   dependencies:
     "@babel/runtime" "^7.3.1"
-    css-vendor "^2.0.1"
-    jss "10.0.0-alpha.17"
+    css-vendor "^2.0.5"
+    jss "10.0.0-alpha.22"
 
 jss-preset-default@^4.3.0:
   version "4.5.0"
@@ -6567,9 +6571,9 @@ jss-vendor-prefixer@^7.0.0:
   dependencies:
     css-vendor "^0.3.8"
 
-jss@10.0.0-alpha.17:
-  version "10.0.0-alpha.17"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/jss/-/jss-10.0.0-alpha.17.tgz#3057c85a846c3bd207c04aafd91c8277955d9c57"
+jss@10.0.0-alpha.22, jss@^10.0.0-alpha.16:
+  version "10.0.0-alpha.22"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/jss/-/jss-10.0.0-alpha.22.tgz#31281c9934a768021fd6c3109a5a7f0564e59230"
   dependencies:
     "@babel/runtime" "^7.3.1"
     is-in-browser "^1.1.3"
@@ -6583,11 +6587,12 @@ jss@^9.7.0, jss@^9.8.7:
     symbol-observable "^1.1.0"
     warning "^3.0.0"
 
-jsx-ast-utils@^2.0.1, jsx-ast-utils@^2.1.0:
-  version "2.1.0"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/jsx-ast-utils/-/jsx-ast-utils-2.1.0.tgz#0ee4e2c971fb9601c67b5641b71be80faecf0b36"
+jsx-ast-utils@^2.1.0, jsx-ast-utils@^2.2.1:
+  version "2.2.1"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/jsx-ast-utils/-/jsx-ast-utils-2.2.1.tgz#4d4973ebf8b9d2837ee91a8208cc66f3a2776cfb"
   dependencies:
     array-includes "^3.0.3"
+    object.assign "^4.1.0"
 
 keyv@3.0.0:
   version "3.0.0"
@@ -6754,10 +6759,6 @@ lodash.foreach@^4.5.0:
   version "4.5.0"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/lodash.foreach/-/lodash.foreach-4.5.0.tgz#1a6a35eace401280c7f06dddec35165ab27e3e53"
 
-lodash.isnumber@^3.0.0:
-  version "3.0.3"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/lodash.isnumber/-/lodash.isnumber-3.0.3.tgz#3ce76810c5928d03352301ac287317f11c0b1ffc"
-
 lodash.isplainobject@^4.0.6:
   version "4.0.6"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz#7c526a52d89b45c45cc690b88163be0497f550cb"
@@ -6807,7 +6808,7 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-lodash@^4.11.1, lodash@^4.13.1, lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0:
+lodash@^4.11.1, lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0:
   version "4.17.11"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
 
@@ -7144,8 +7145,8 @@ mini-css-extract-plugin@^0.4.0:
     webpack-sources "^1.1.0"
 
 mini-svg-data-uri@^1.0.0:
-  version "1.0.3"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/mini-svg-data-uri/-/mini-svg-data-uri-1.0.3.tgz#f8bb0d7afbf3de29152aadd0f47701197ceab4a3"
+  version "1.1.3"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/mini-svg-data-uri/-/mini-svg-data-uri-1.1.3.tgz#9759ee5f4d89a4b724d089ce52eab4b623bfbc88"
 
 minimalistic-assert@^1.0.0, minimalistic-assert@^1.0.1:
   version "1.0.1"
@@ -7219,12 +7220,6 @@ mkdirp@0.5.1, mkdirp@0.5.x, mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkdirp@
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/mkdirp/-/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
   dependencies:
     minimist "0.0.8"
-
-modularscale@^1.0.2:
-  version "1.0.2"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/modularscale/-/modularscale-1.0.2.tgz#4a8f13af32a5e5214fc6e2cfc529064abfd7d877"
-  dependencies:
-    lodash.isnumber "^3.0.0"
 
 moment@^2.21.0:
   version "2.24.0"
@@ -7427,8 +7422,8 @@ node-pre-gyp@^0.12.0:
     tar "^4"
 
 node-releases@^1.1.23:
-  version "1.1.23"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/node-releases/-/node-releases-1.1.23.tgz#de7409f72de044a2fa59c097f436ba89c39997f0"
+  version "1.1.24"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/node-releases/-/node-releases-1.1.24.tgz#2fb494562705c01bfb81a7af9f8584c4d56311b4"
   dependencies:
     semver "^5.3.0"
 
@@ -7450,7 +7445,7 @@ nopt@^4.0.1:
     abbrev "1"
     osenv "^0.1.4"
 
-normalize-package-data@^2.3.2, normalize-package-data@^2.3.4:
+normalize-package-data@^2.0.0, normalize-package-data@^2.3.2, normalize-package-data@^2.3.4:
   version "2.5.0"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/normalize-package-data/-/normalize-package-data-2.5.0.tgz#e66db1838b200c1dfc233225d12cb36520e234a8"
   dependencies:
@@ -7473,9 +7468,9 @@ normalize-range@^0.1.2:
   version "0.1.2"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/normalize-range/-/normalize-range-0.1.2.tgz#2d10c06bdfd312ea9777695a4d28439456b75942"
 
-normalize-scroll-left@^0.2.0:
-  version "0.2.0"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/normalize-scroll-left/-/normalize-scroll-left-0.2.0.tgz#9445d74275f303cc661e113329aefa492f58114c"
+normalize-scroll-left@^0.1.2:
+  version "0.1.2"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/normalize-scroll-left/-/normalize-scroll-left-0.1.2.tgz#6b79691ba79eb5fb107fa5edfbdc06b55caee2aa"
 
 normalize-url@2.0.1:
   version "2.0.1"
@@ -7501,8 +7496,8 @@ npm-conf@^1.1.0:
     pify "^3.0.0"
 
 npm-packlist@^1.1.6:
-  version "1.4.1"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/npm-packlist/-/npm-packlist-1.4.1.tgz#19064cdf988da80ea3cee45533879d90192bbfbc"
+  version "1.4.4"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/npm-packlist/-/npm-packlist-1.4.4.tgz#866224233850ac534b63d1a6e76050092b5d2f44"
   dependencies:
     ignore-walk "^3.0.1"
     npm-bundled "^1.0.1"
@@ -7572,7 +7567,7 @@ object-hash@^1.1.4:
   version "1.3.1"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/object-hash/-/object-hash-1.3.1.tgz#fde452098a951cb145f039bb7d455449ddc126df"
 
-object-keys@^1.0.12:
+object-keys@^1.0.11, object-keys@^1.0.12:
   version "1.1.1"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/object-keys/-/object-keys-1.1.1.tgz#1c47f272df277f3b1daf061677d9c82e2322c60e"
 
@@ -7585,6 +7580,15 @@ object-visit@^1.0.0:
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/object-visit/-/object-visit-1.0.1.tgz#f79c4493af0c5377b59fe39d395e41042dd045bb"
   dependencies:
     isobject "^3.0.0"
+
+object.assign@^4.1.0:
+  version "4.1.0"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/object.assign/-/object.assign-4.1.0.tgz#968bf1100d7956bb3ca086f006f846b3bc4008da"
+  dependencies:
+    define-properties "^1.1.2"
+    function-bind "^1.1.1"
+    has-symbols "^1.0.0"
+    object-keys "^1.0.11"
 
 object.entries@^1.1.0:
   version "1.1.0"
@@ -7673,10 +7677,10 @@ opn@^5.4.0, opn@^5.5.0:
     is-wsl "^1.1.0"
 
 optimize-css-assets-webpack-plugin@^5.0.1:
-  version "5.0.1"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/optimize-css-assets-webpack-plugin/-/optimize-css-assets-webpack-plugin-5.0.1.tgz#9eb500711d35165b45e7fd60ba2df40cb3eb9159"
+  version "5.0.3"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/optimize-css-assets-webpack-plugin/-/optimize-css-assets-webpack-plugin-5.0.3.tgz#e2f1d4d94ad8c0af8967ebd7cf138dcb1ef14572"
   dependencies:
-    cssnano "^4.1.0"
+    cssnano "^4.1.10"
     last-call-webpack-plugin "^3.0.0"
 
 optionator@^0.8.2:
@@ -8603,8 +8607,8 @@ pseudomap@^1.0.1, pseudomap@^1.0.2:
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/pseudomap/-/pseudomap-1.0.2.tgz#f052a28da70e618917ef0a8ac34c1ae5a68286b3"
 
 psl@^1.1.24:
-  version "1.1.33"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/psl/-/psl-1.1.33.tgz#5533d9384ca7aab86425198e10e8053ebfeab661"
+  version "1.2.0"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/psl/-/psl-1.2.0.tgz#df12b5b1b3a30f51c329eacbdef98f3a6e136dc6"
 
 public-encrypt@^4.0.0:
   version "4.0.3"
@@ -8716,12 +8720,21 @@ range-parser@^1.2.1, range-parser@~1.2.1:
   version "1.2.1"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/range-parser/-/range-parser-1.2.1.tgz#3cf37023d199e1c24d1a55b84800c2f3e6468031"
 
-raw-body@2.4.0, raw-body@^2.3.3:
+raw-body@2.4.0:
   version "2.4.0"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/raw-body/-/raw-body-2.4.0.tgz#a1ce6fb9c9bc356ca52e89256ab59059e13d0332"
   dependencies:
     bytes "3.1.0"
     http-errors "1.7.2"
+    iconv-lite "0.4.24"
+    unpipe "1.0.0"
+
+raw-body@^2.3.3:
+  version "2.4.1"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/raw-body/-/raw-body-2.4.1.tgz#30ac82f98bb5ae8c152e67149dac8d55153b168c"
+  dependencies:
+    bytes "3.1.0"
+    http-errors "1.7.3"
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
@@ -8796,8 +8809,8 @@ react-helmet@^5.2.1:
     react-side-effect "^1.1.0"
 
 react-hot-loader@^4.8.4:
-  version "4.11.1"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/react-hot-loader/-/react-hot-loader-4.11.1.tgz#2cabbd0f1c8a44c28837b86d6ce28521e6d9a8ac"
+  version "4.12.0"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/react-hot-loader/-/react-hot-loader-4.12.0.tgz#cb93d78db8b97fd7c1f5ab688a7eeaa4ad47df3f"
   dependencies:
     fast-levenshtein "^2.0.6"
     global "^4.3.0"
@@ -8843,9 +8856,14 @@ react-side-effect@^1.1.0:
     exenv "^1.2.1"
     shallowequal "^1.0.1"
 
-react-typography@^0.16.19:
-  version "0.16.19"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/react-typography/-/react-typography-0.16.19.tgz#5736b47961dcf6b9605b6fa38d41980db2588e28"
+react-transition-group@^4.0.0:
+  version "4.2.1"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/react-transition-group/-/react-transition-group-4.2.1.tgz#61fc9e36568bff9a1fe4e60fae323c8a6dbc0680"
+  dependencies:
+    "@babel/runtime" "^7.4.5"
+    dom-helpers "^3.4.0"
+    loose-envify "^1.4.0"
+    prop-types "^15.6.2"
 
 react@^16.8.4, react@^16.8.6:
   version "16.8.6"
@@ -8862,6 +8880,25 @@ read-chunk@^3.0.0:
   dependencies:
     pify "^4.0.1"
     with-open-file "^0.1.6"
+
+read-package-json@^2.0.0:
+  version "2.0.13"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/read-package-json/-/read-package-json-2.0.13.tgz#2e82ebd9f613baa6d2ebe3aa72cefe3f68e41f4a"
+  dependencies:
+    glob "^7.1.1"
+    json-parse-better-errors "^1.0.1"
+    normalize-package-data "^2.0.0"
+    slash "^1.0.0"
+  optionalDependencies:
+    graceful-fs "^4.1.2"
+
+read-package-tree@^5.3.1:
+  version "5.3.1"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/read-package-tree/-/read-package-tree-5.3.1.tgz#a32cb64c7f31eb8a6f31ef06f9cedf74068fe636"
+  dependencies:
+    read-package-json "^2.0.0"
+    readdir-scoped-modules "^1.0.0"
+    util-promisify "^2.1.0"
 
 read-pkg-up@^1.0.1:
   version "1.0.1"
@@ -8927,6 +8964,15 @@ readable-stream@~1.0.31:
     inherits "~2.0.1"
     isarray "0.0.1"
     string_decoder "~0.10.x"
+
+readdir-scoped-modules@^1.0.0:
+  version "1.1.0"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/readdir-scoped-modules/-/readdir-scoped-modules-1.1.0.tgz#8d45407b4f870a0dcaebc0e28670d18e74514309"
+  dependencies:
+    debuglog "^1.0.1"
+    dezalgo "^1.0.0"
+    graceful-fs "^4.1.2"
+    once "^1.3.0"
 
 readdirp@^2.2.1:
   version "2.2.1"
@@ -9394,8 +9440,8 @@ semver-truncate@^1.1.2:
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/semver/-/semver-5.7.0.tgz#790a7cf6fea5459bac96110b29b60412dc8ff96b"
 
 semver@^6.0.0, semver@^6.1.1:
-  version "6.1.2"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/semver/-/semver-6.1.2.tgz#079960381376a3db62eb2edc8a3bfb10c7cfe318"
+  version "6.2.0"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/semver/-/semver-6.2.0.tgz#4d813d9590aaf8a9192693d6c85b9344de5901db"
 
 send@0.17.1:
   version "0.17.1"
@@ -9553,8 +9599,8 @@ simple-swizzle@^0.2.2:
     is-arrayish "^0.3.1"
 
 sisteransi@^1.0.0:
-  version "1.0.0"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/sisteransi/-/sisteransi-1.0.0.tgz#77d9622ff909080f1c19e5f4a1df0c1b0a27b88c"
+  version "1.0.1"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/sisteransi/-/sisteransi-1.0.1.tgz#208a2443e1fc40b05ccad4de0aa8798b27249ca1"
 
 slash@^1.0.0:
   version "1.0.0"
@@ -10161,7 +10207,21 @@ term-size@^1.2.0:
   dependencies:
     execa "^0.7.0"
 
-terser-webpack-plugin@^1.1.0, terser-webpack-plugin@^1.2.2:
+terser-webpack-plugin@1.2.4:
+  version "1.2.4"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/terser-webpack-plugin/-/terser-webpack-plugin-1.2.4.tgz#56f87540c28dd5265753431009388f473b5abba3"
+  dependencies:
+    cacache "^11.3.2"
+    find-cache-dir "^2.0.0"
+    is-wsl "^1.1.0"
+    schema-utils "^1.0.0"
+    serialize-javascript "^1.7.0"
+    source-map "^0.6.1"
+    terser "^3.17.0"
+    webpack-sources "^1.3.0"
+    worker-farm "^1.7.0"
+
+terser-webpack-plugin@^1.1.0:
   version "1.3.0"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/terser-webpack-plugin/-/terser-webpack-plugin-1.3.0.tgz#69aa22426299f4b5b3775cbed8cb2c5d419aa1d4"
   dependencies:
@@ -10176,9 +10236,17 @@ terser-webpack-plugin@^1.1.0, terser-webpack-plugin@^1.2.2:
     webpack-sources "^1.3.0"
     worker-farm "^1.7.0"
 
+terser@^3.17.0:
+  version "3.17.0"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/terser/-/terser-3.17.0.tgz#f88ffbeda0deb5637f9d24b0da66f4e15ab10cb2"
+  dependencies:
+    commander "^2.19.0"
+    source-map "~0.6.1"
+    source-map-support "~0.5.10"
+
 terser@^4.0.0:
-  version "4.0.0"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/terser/-/terser-4.0.0.tgz#ef356f6f359a963e2cc675517f21c1c382877374"
+  version "4.0.2"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/terser/-/terser-4.0.2.tgz#580cea06c4932f46a48ed13804c93bc93c275968"
   dependencies:
     commander "^2.19.0"
     source-map "~0.6.1"
@@ -10391,28 +10459,6 @@ type@^1.0.1:
 typedarray@^0.0.6:
   version "0.0.6"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
-
-typography-normalize@^0.16.19:
-  version "0.16.19"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/typography-normalize/-/typography-normalize-0.16.19.tgz#58e0cf12466870c5b27006daa051fe7307780660"
-
-typography-theme-wordpress-2012@^0.16.19:
-  version "0.16.19"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/typography-theme-wordpress-2012/-/typography-theme-wordpress-2012-0.16.19.tgz#f104f3054a30af63e5759b7981986e3ec1a3fea3"
-  dependencies:
-    gray-percentage "^2.0.0"
-
-typography@^0.16.19:
-  version "0.16.19"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/typography/-/typography-0.16.19.tgz#092bf30a5a47495c955b54f40d3b55a7a9f28e8a"
-  dependencies:
-    compass-vertical-rhythm "^1.4.5"
-    decamelize "^1.2.0"
-    gray-percentage "^2.0.0"
-    lodash "^4.13.1"
-    modularscale "^1.0.2"
-    object-assign "^4.1.0"
-    typography-normalize "^0.16.19"
 
 ua-parser-js@^0.7.18:
   version "0.7.20"
@@ -10673,6 +10719,12 @@ utif@^2.0.1:
 util-deprecate@^1.0.1, util-deprecate@^1.0.2, util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
+
+util-promisify@^2.1.0:
+  version "2.1.0"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/util-promisify/-/util-promisify-2.1.0.tgz#3c2236476c4d32c5ff3c47002add7c13b9a82a53"
+  dependencies:
+    object.getownpropertydescriptors "^2.0.3"
 
 util.promisify@^1.0.0, util.promisify@~1.0.0:
   version "1.0.0"
@@ -11148,8 +11200,8 @@ xstate@^3.1.0:
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/xstate/-/xstate-3.3.3.tgz#64177cd4473d4c2424b3df7d2434d835404b09a9"
 
 xstate@^4.3.2:
-  version "4.6.2"
-  resolved "http://10.210.200.230:8081/repository/williamhill-npm/xstate/-/xstate-4.6.2.tgz#5122be38b659a03bce49e129feeaf8029c919dec"
+  version "4.6.4"
+  resolved "http://10.210.200.230:8081/repository/williamhill-npm/xstate/-/xstate-4.6.4.tgz#15ab4eb4526483a9caa9d67b26f026dfe390697f"
 
 xtend@^4.0.0, xtend@^4.0.1, xtend@~4.0.1:
   version "4.0.1"
