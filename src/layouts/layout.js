@@ -7,6 +7,8 @@ import Container from "@material-ui/core/Container"
 import Header from "../theme/gatsby-theme-material-ui-layout/layout/header"
 import Footer from "../containers/footer"
 
+import "./layout.css"
+
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
@@ -21,7 +23,7 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <Container maxWidth="md">
+        <Container maxWidth="lg">
           <div>
             <main>{children}</main>
           </div>

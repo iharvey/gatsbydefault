@@ -11,11 +11,12 @@ const styles = theme => ({
     marginTop: theme.spacing(1),
   },
   blockquote: {
-    padding: theme.spacing(2, 2, 0, 6),
-    paddingBottom: "1px",
-    marginBottom: theme.spacing(3),
-    marginLeft: theme.spacing(8),
-    marginRight: theme.spacing(4),
+    padding: theme.spacing(2, 4),
+    margin: theme.spacing(0, 0, 4, 0),
+
+    "& .MuiTypography-paragraph": {
+      fontSize: `${theme.typography.fontSize / theme.typography.htmlFontSize}rem`,
+    },
   },
 })
 
@@ -31,8 +32,11 @@ const options = {
     a: { component: Link },
     blockquote: {
       component: withStyles(styles)(({ classes, ...props }) => (
-        <Paper elevation={2} classes={{ root: classes.blockquote }} {...props} />
+        <Paper elevation={0} classes={{ root: classes.blockquote }} {...props} />
       )),
+      props: {
+        className: "MuiBlockquote",
+      },
     },
     li: {
       component: withStyles(styles)(({ classes, ...props }) => (
@@ -47,3 +51,22 @@ const options = {
 export default function Markdown(props) {
   return <ReactMarkdown options={options} {...props} />
 }
+
+// .c0157 blockquote {
+//   border: 5px solid #bbbbbb;
+//   margin: 2.5em 0;
+//   padding: 1em 1.1em 1em 1.3em;
+//   position: relative;
+//   font-style: italic;
+
+//   "&:before, &:after" {
+//     top: -5px;
+//     left: 50%;
+//     width: 94%;
+//     height: 5px;
+//     content: "";
+//     position: absolute;
+//     background: #ffffff;
+//     margin-left: -47%;
+//   }
+// }

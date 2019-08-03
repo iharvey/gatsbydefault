@@ -1,8 +1,9 @@
 import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles"
-import { red, amber, indigo } from "@material-ui/core/colors"
+import { red } from "@material-ui/core/colors"
 
 export const headerFont = "'Work Sans', sans-serif"
 export const bodyFont = "'Quattrocento Sans', sans-serif;"
+const boldWeight = "700"
 
 const defaultTheme = createMuiTheme({
   typography: {
@@ -27,13 +28,16 @@ const defaultTheme = createMuiTheme({
     h6: {
       fontFamily: headerFont,
     },
+    subtitle2: {
+      fontWeight: boldWeight,
+    }
   },
   palette: {
     primary: {
-      main: amber["500"],
+      main: "#556cd6",
     },
     secondary: {
-      main: indigo["500"],
+      main: "#19857b",
     },
     error: {
       main: red["A400"],
@@ -46,8 +50,16 @@ const defaultTheme = createMuiTheme({
 
 const theme = {
   ...defaultTheme,
-  overrides: {},
+  overrides: {
+    // MuiButton: {
+    //   text: {
+    //     color: "white",
+    //   },
+    // },
+  },
 }
+
+// console.warn({ defaultTheme })
 
 export default responsiveFontSizes(theme)
 

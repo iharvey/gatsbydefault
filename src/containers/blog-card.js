@@ -2,68 +2,67 @@ import React from "react"
 import PropTypes from "prop-types"
 import { makeStyles } from "@material-ui/core/styles"
 import Img from "gatsby-image"
-import Card from "@material-ui/core/Card"
-import CardContent from "@material-ui/core/CardContent"
 import Divider from "@material-ui/core/Divider"
-import { H6, Body2, Overline } from "../components/typo"
+import Grid from "@material-ui/core/Grid"
+import ListItem from "@material-ui/core/ListItem"
+import ListItemText from "@material-ui/core/ListItemText"
+import ImageIcon from "@material-ui/icons/Image"
 
 const useStyles = makeStyles(theme => ({
-  "MuiEngagementCard--01": {
-    transition: "0.3s",
-    height: "100%",
-    margin: "auto",
-    boxShadow: "0 8px 40px -12px rgba(0,0,0,0.3)",
-    "&:hover": {
-      boxShadow: "0 16px 70px -12.125px rgba(0,0,0,0.3)",
-    },
-    "& .MuiCardMedia-root": {
-      paddingTop: "56.25%",
-    },
-    "& .MuiCardContent-root": {
-      textAlign: "left",
-      padding: theme.spacing(3),
-    },
-    "& .MuiDivider-root": {
-      margin: `${theme.spacing(3)}px 0`,
-    },
-    "& .MuiAvatar-root": {
-      display: "inline-block",
-      border: "2px solid white",
-      "&:not(:first-of-type)": {
-        marginLeft: theme.spacing(-1),
-      },
-    },
+  gridItem: {
+    background: "#f8f8f8",
   },
+  // "MuiEngagementCard--01": {
+  //   transition: "0.3s",
+  //   height: "100%",
+  //   margin: "auto",
+  //   boxShadow: "0 8px 40px -12px rgba(0,0,0,0.3)",
+  //   "&:hover": {
+  //     boxShadow: "0 16px 70px -12.125px rgba(0,0,0,0.3)",
+  //   },
+  //   "& .MuiCardMedia-root": {
+  //     paddingTop: "56.25%",
+  //   },
+  //   "& .MuiCardContent-root": {
+  //     textAlign: "left",
+  //     padding: theme.spacing(3),
+  //   },
+  //   "& .MuiDivider-root": {
+  //     margin: `${theme.spacing(3)}px 0`,
+  //   },
+  // },
   "MuiTagChip--01": {
     marginRight: theme.spacing(1),
     marginBottom: theme.spacing(1),
   },
 }))
 
-const BlogCard = ({ props }) => {
-  const { node } = props
+const BlogCard = ({ node }) => {
   const classes = useStyles()
 
   return (
     <>
-      <Card
-        className={classes["MuiEngagementCard--01"]}
-        key={`card__${node.slug}`}
-      >
-        <Img fluid={node.image.sizes} alt={node.title} />
-        <CardContent>
-          <H6>{node.title}</H6>
-          <Body2>{node.body.childMarkdownRemark.excerpt}</Body2>
-          {/* <Divider light />
-          <Overline>Created: {node.createdAt}</Overline> */}
-        </CardContent>
-      </Card>
+      <ListItem disableGutters>
+        <Grid container spacing={0} className={classes.gridItem}>
+          <Grid item xs={3}>
+            <div style={{ marginRight: "1rem" }}>
+              {node.image ? (
+                <Img fluid={node.image.sizes} alt={node.title} className={classes.thumbnailImage} />
+              ) : (
+                <ImageIcon />
+              )}
+            </div>
+          </Grid>
+          <Grid item xs={9}>
+            <ListItemText primary={node.title} secondary={node.body.childMarkdownRemark.excerpt} />
+          </Grid>
+        </Grid>
+      </ListItem>
     </>
   )
 }
 
 BlogCard.propTypes = {
-  props: PropTypes.any,
   node: PropTypes.objectOf({
     slug: PropTypes.any,
     title: PropTypes.any,
@@ -71,12 +70,12 @@ BlogCard.propTypes = {
     body: PropTypes.objectOf({
       childMarkdownRemark: PropTypes.objectOf({
         excerpt: PropTypes.any,
-      })
+      }),
     }),
     image: PropTypes.objectOf({
-        sizes: PropTypes.any,
+      sizes: PropTypes.any,
     }),
-  })
+  }),
 }
 
 export default BlogCard

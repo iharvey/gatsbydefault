@@ -17,7 +17,7 @@ export default function TopLayout(props) {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
         />
-        <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans|Work+Sans&display=swap" rel="stylesheet"></link>
+        <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,700|Work+Sans&display=swap" rel="stylesheet"></link>
       </Helmet>
 
       <JssProvider generateClassName={generateClassName}>

@@ -5,10 +5,11 @@ import Img from "gatsby-image"
 import { makeStyles } from "@material-ui/core/styles"
 import Chip from "@material-ui/core/Chip"
 import Divider from "@material-ui/core/Divider"
+import Container from "@material-ui/core/Container"
 import SEO from "../components/seo"
 import Layout from "../layouts/layout"
-import Markdown from "../utils/Markdown"
-import { H4 } from "../components/typo"
+import Markdown from "../components/Markdown"
+import { H3 } from "../components/typo"
 
 const useStyles = makeStyles(theme => ({
   heading: {
@@ -22,36 +23,43 @@ const useStyles = makeStyles(theme => ({
   chip: {
     marginRight: theme.spacing(1),
   },
+  hero: {
+    width: "65%",
+    marginLeft: theme.spacing(2),
+    float: 'right',
+  },
 }))
 
-const BlogPost = ({ data }) => {
+const BlogPostTemplate = ({ data }) => {
   const classes = useStyles()
   const { title, body, image, tags = [] } = data.contentfulBlogPost
 
   return (
     <Layout>
-      <SEO image={image.fixed.src} title={title} />
+      <SEO image={image ? image.fixed.src : null} title={title} />
+      <Container maxWidth="md">
+        <div className="blogpost">
+          {image ? <Img fluid={image.sizes} alt={title} className={classes.hero} /> : null}
 
-      <div className="blogpost">
-        <Img fluid={image.sizes} alt={title} />
-        <H4 className={classes.heading}>{title}</H4>
-        <div className="tags">
-          {tags && tags.map(tag => <Chip className={classes.chip} size="small" label={tag} key={`tag__${tag}`} />)}
-        </div>
-        <Divider className={classes.divider} />
-        <div>
-          <Markdown>{body.body}</Markdown>
-        </div>
+          <H3 className={classes.heading}>{title}</H3>
+          <div className="tags">
+            {tags && tags.map(tag => <Chip className={classes.chip} size="small" label={tag} key={`tag__${tag}`} />)}
+          </div>
+          <Divider className={classes.divider} />
+          <div>
+            <Markdown>{body.body}</Markdown>
+          </div>
 
-        <Link to="/blogposts">View more posts</Link>
-        <br />
-        <Link to="/">{"< Back to Home"}</Link>
-      </div>
+          <Link to="/blogposts">View more posts</Link>
+          <br />
+          <Link to="/">{"< Back to Home"}</Link>
+        </div>
+      </Container>
     </Layout>
   )
 }
 
-export default BlogPost
+export default BlogPostTemplate
 
 export const pageQuery = graphql`
   query($slug: String!) {
@@ -77,7 +85,7 @@ export const pageQuery = graphql`
   }
 `
 
-BlogPost.propTypes = {
+BlogPostTemplate.propTypes = {
   data: PropTypes.shape({
     contentfulBlogPost: PropTypes.shape({
       body: PropTypes.shape({

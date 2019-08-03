@@ -39,6 +39,10 @@ const headerLinks = [
     url: "/blogposts",
     name: "Posts",
   },
+  {
+    url: "/dishes",
+    name: "Dishes",
+  }
 ]
 
 export default function ButtonAppBar() {
