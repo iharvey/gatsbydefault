@@ -22,6 +22,14 @@ exports.createPages = ({ graphql, actions }) => {
               }
             }
           }
+          allContentfulDish {
+            edges {
+              node {
+                id
+                slug
+              }
+            }
+          }
         }
       `
     )
@@ -31,11 +39,23 @@ exports.createPages = ({ graphql, actions }) => {
       }
       // Resolve the paths to our template
       const blogPostTemplate = path.resolve("./src/templates/blogpost.js")
+      const dishTemplate = path.resolve("./src/templates/dish.js")
+
       // Then for each result we create a page.
       result.data.allContentfulBlogPost.edges.forEach(edge => {
         createPage({
           path: `/blogpost/${edge.node.slug}/`,
           component: slash(blogPostTemplate),
+          context: {
+            slug: edge.node.slug,
+            id: edge.node.id,
+          },
+        })
+      })
+      result.data.allContentfulDish.edges.forEach(edge => {
+        createPage({
+          path: `/dishes/${edge.node.slug}/`,
+          component: slash(dishTemplate),
           context: {
             slug: edge.node.slug,
             id: edge.node.id,

@@ -44,14 +44,6 @@ module.exports = {
         },
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-typography`,
-    //   options: {
-    //     pathToConfigModule: `src/theme/typography`,
-    //     disableAutoprefixing: false,
-    //     disableMinification: false,
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
