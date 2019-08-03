@@ -123,7 +123,7 @@ const KitchenSink = () => {
         </IconButton>
       </div>
 
-      <hr/>
+      <hr />
 
       <Grid container spacing={2}>
         <Grid key={`grid__1`} item xs={12} sm={6}>

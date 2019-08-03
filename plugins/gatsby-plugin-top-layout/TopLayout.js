@@ -13,18 +13,18 @@ export default function TopLayout(props) {
   return (
     <>
       <Helmet>
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
-        />
-        <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,700|Work+Sans&display=swap" rel="stylesheet"></link>
+        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no" />
+        <link
+          href="https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,700|Work+Sans&display=swap"
+          rel="stylesheet"
+        ></link>
       </Helmet>
 
       <JssProvider generateClassName={generateClassName}>
-          <ThemeProvider theme={muiTheme}>
-            <CssBaseline />
-            {props.children}
-          </ThemeProvider>
+        <ThemeProvider theme={muiTheme}>
+          <CssBaseline />
+          {props.children}
+        </ThemeProvider>
       </JssProvider>
     </>
   )

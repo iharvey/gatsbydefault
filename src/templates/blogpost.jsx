@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
   hero: {
     width: "65%",
     marginLeft: theme.spacing(2),
-    float: 'right',
+    float: "right",
   },
 }))
 
@@ -36,10 +36,10 @@ const BlogPostTemplate = ({ data }) => {
 
   return (
     <Layout>
-      <SEO image={image ? image.fixed.src : null} title={title} />
+      <SEO image={image ? image.fluid.src : null} title={title} />
       <Container maxWidth="md">
         <div className="blogpost">
-          {image ? <Img fluid={image.sizes} alt={title} className={classes.hero} /> : null}
+          {image ? <Img fluid={image.fluid} alt={title} className={classes.hero} /> : null}
 
           <H3 className={classes.heading}>{title}</H3>
           <div className="tags">
@@ -73,11 +73,8 @@ export const pageQuery = graphql`
         }
       }
       image {
-        sizes(maxWidth: 1280) {
-          ...GatsbyContentfulSizes
-        }
-        fixed {
-          src
+        fluid {
+          ...GatsbyContentfulFluid
         }
       }
       tags
@@ -92,18 +89,8 @@ BlogPostTemplate.propTypes = {
         body: PropTypes.string,
       }),
       image: PropTypes.shape({
-        fixed: PropTypes.shape({
+        fluid: PropTypes.shape({
           src: PropTypes.string,
-        }),
-        sizes: PropTypes.shape({
-          aspectRatio: PropTypes.number,
-          base64: PropTypes.string,
-          sizes: PropTypes.string,
-          src: PropTypes.string,
-          srcSet: PropTypes.string,
-          srcSetWebp: PropTypes.string,
-          srcWebp: PropTypes.string,
-          tracedSVG: PropTypes.string,
         }),
       }),
       slug: PropTypes.string,

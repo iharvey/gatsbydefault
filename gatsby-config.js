@@ -19,18 +19,18 @@ module.exports = {
         accessToken: `MSGUVY4yMrSsa_zsxzgrfVFizeOJl6V-BpT0CQMBJAQ`,
       },
     },
-    {
-      resolve: 'gatsby-plugin-eslint',
-      options: {
-        test: /\.js$|\.jsx$/,
-        exclude: /(node_modules|.cache|public)/,
-        stages: ['develop'],
-        options: {
-          emitWarning: true,
-          failOnError: false
-        }
-      }
-    },
+    // {
+    //   resolve: "gatsby-plugin-eslint",
+    //   options: {
+    //     test: /\.js$|\.jsx$/,
+    //     exclude: /(node_modules|.cache|public)/,
+    //     stages: ["develop"],
+    //     options: {
+    //       emitWarning: true,
+    //       failOnError: false,
+    //     },
+    //   },
+    // },
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

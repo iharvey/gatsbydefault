@@ -10,6 +10,7 @@ import SEO from "../components/seo"
 import Layout from "../layouts/layout"
 import Markdown from "../components/Markdown"
 import { H3 } from "../components/typo"
+import { fluidImgType } from "../types"
 
 const useStyles = makeStyles(theme => ({
   heading: {
@@ -28,7 +29,7 @@ const useStyles = makeStyles(theme => ({
 const DishTemplate = ({ data }) => {
   const classes = useStyles()
   const { title, body, image, tags = [] } = data.contentfulDish
-  // console.log({ image })
+
   return (
     <Layout>
       <SEO image={image ? image.fluid.src : null} title={title} />
@@ -70,21 +71,8 @@ export const pageQuery = graphql`
         }
       }
       image {
-        fixed(width: 500, height: 500) {
-          ...GatsbyContentfulFixed
-          base64
-          height
-          src
-          srcSet
-          width
-        }
         fluid(maxWidth: 400) {
           ...GatsbyContentfulFluid
-          aspectRatio
-          base64
-          sizes
-          src
-          srcSet
         }
       }
     }
@@ -98,11 +86,6 @@ DishTemplate.defaultProps = {
       rawMarkdownBody: "",
     },
   },
-  image: {
-    fixed: {
-      src: "",
-    },
-  },
   tags: [],
 }
 
@@ -111,27 +94,18 @@ DishTemplate.propTypes = {
     contentfulDish: PropTypes.shape({
       body: PropTypes.shape({
         childMarkdownRemark: PropTypes.shape({
-          rawMarkdownBody: PropTypes.string,
-        }),
-      }),
+          rawMarkdownBody: PropTypes.string.isRequired,
+        }).isRequired,
+      }).isRequired,
+      fluid: fluidImgType,
       image: PropTypes.shape({
         fluid: PropTypes.shape({
           src: PropTypes.string,
         }),
-        sizes: PropTypes.shape({
-          aspectRatio: PropTypes.number,
-          base64: PropTypes.string,
-          sizes: PropTypes.string,
-          src: PropTypes.string,
-          srcSet: PropTypes.string,
-          srcSetWebp: PropTypes.string,
-          srcWebp: PropTypes.string,
-          tracedSVG: PropTypes.string,
-        }),
       }),
-      slug: PropTypes.string,
+      slug: PropTypes.string.isRequired,
       tags: PropTypes.arrayOf(PropTypes.string),
-      title: PropTypes.string,
+      title: PropTypes.string.isRequired,
     }),
   }),
 }

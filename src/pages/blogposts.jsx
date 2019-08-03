@@ -1,27 +1,19 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { makeStyles } from "@material-ui/core/styles"
-import { Link } from "gatsby"
-import { H3 } from "../components/typo"
-import Layout from "../layouts/layout"
-import SEO from "../components/seo"
-import BlogCard from "../containers/blog-card"
 import Button from "@material-ui/core/Button"
 import List from "@material-ui/core/List"
 import Container from "@material-ui/core/Container"
+import Layout from "../layouts/layout"
+import SEO from "../components/seo"
+import BlogCard from "../containers/blog-card"
+import { H3 } from "../components/typo"
 
 const useStyles = makeStyles(theme => ({
   heading: {
     marginTop: theme.spacing(3),
     marginBottom: theme.spacing(3),
-  },
-  thumbnailImage: {
-    // marginTop: theme.spacing(1.5),
-    // marginBottom: theme.spacing(1.5),
-  },
-  "link--internal": {
-    textDecoration: "unset",
   },
 }))
 
@@ -37,9 +29,7 @@ const BlogPostsPage = ({ data }) => {
 
           <List className={classes.root}>
             {data.allContentfulBlogPost.edges.map(({ node }) => (
-              <Link key={node.slug} to={`/blogpost/${node.slug}`} className={classes["link--internal"]}>
-                <BlogCard node={node} />
-              </Link>
+              <BlogCard key={node.slug} node={node} />
             ))}
           </List>
 
@@ -70,11 +60,8 @@ export const postQuery = graphql`
             }
           }
           image {
-            sizes(maxWidth: 200) {
-              ...GatsbyContentfulSizes
-            }
-            fixed {
-              src
+            fluid(maxWidth: 250, maxHeight: 200) {
+              ...GatsbyContentfulFluid
             }
           }
           createdAt(formatString: "MM-DD-YYYY")
@@ -89,7 +76,9 @@ BlogPostsPage.propTypes = {
     allContentfulBlogPost: PropTypes.shape({
       edges: PropTypes.arrayOf(
         PropTypes.shape({
-          node: PropTypes.any,
+          node: PropTypes.shape({
+            slug: PropTypes.string.isRequired,
+          }),
         })
       ),
     }),

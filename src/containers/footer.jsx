@@ -13,8 +13,7 @@ const Footer = () => {
   const classes = useStyles()
   return (
     <footer>
-      <Divider className={classes["MuiDivider--01"]} light />© {new Date().getFullYear()}
-      , Built with
+      <Divider className={classes["MuiDivider--01"]} light />© {new Date().getFullYear()}, Built with
       {` `}
       <a href="https://www.gatsbyjs.org">Gatsby</a>
     </footer>

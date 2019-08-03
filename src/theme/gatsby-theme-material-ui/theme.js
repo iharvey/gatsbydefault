@@ -30,7 +30,7 @@ const defaultTheme = createMuiTheme({
     },
     subtitle2: {
       fontWeight: boldWeight,
-    }
+    },
   },
   palette: {
     primary: {
@@ -58,8 +58,6 @@ const theme = {
     // },
   },
 }
-
-// console.warn({ defaultTheme })
 
 export default responsiveFontSizes(theme)
 
