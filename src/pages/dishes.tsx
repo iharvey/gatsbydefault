@@ -1,5 +1,5 @@
 import React from "react"
-import PropTypes from "prop-types"
+// import PropTypes from "prop-types"
 import { graphql, Link } from "gatsby"
 import { makeStyles } from "@material-ui/core/styles"
 import Button from "@material-ui/core/Button"
@@ -9,6 +9,7 @@ import { H3 } from "../components/typo"
 import Layout from "../layouts/layout"
 import SEO from "../components/seo"
 import DishCard from "../containers/dish-card"
+import { FluidImgType } from "../types"
 
 // import Card from "@material-ui/core/Card"
 // import CardContent from "@material-ui/core/CardContent"
@@ -20,9 +21,6 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(3),
     marginBottom: theme.spacing(3),
   },
-  "link--internal": {
-    textDecoration: "unset",
-  },
   "link--home": {
     display: "inline-block",
     marginTop: theme.spacing(3),
@@ -30,7 +28,27 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const DishesPage = ({ data }) => {
+export interface DishesPageProps {
+  data: {
+    allContentfulDish: {
+      edges: [
+        {
+          node: {
+            slug: string
+            title: string
+            image: {
+              fluid: FluidImgType
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+
+const DishesPage = (props: DishesPageProps) => {
+  const { data } = props
+
   const classes = useStyles()
   return (
     <Layout>
@@ -49,20 +67,6 @@ const DishesPage = ({ data }) => {
       </Button>
     </Layout>
   )
-}
-
-DishesPage.propTypes = {
-  data: PropTypes.shape({
-    allContentfulDish: PropTypes.shape({
-      edges: PropTypes.arrayOf(
-        PropTypes.shape({
-          node: PropTypes.shape({
-            slug: PropTypes.string.isRequired,
-          }),
-        })
-      ),
-    }),
-  }),
 }
 
 export default DishesPage
@@ -90,25 +94,3 @@ export const dishQuery = graphql`
     }
   }
 `
-
-// DishesPage.propTypes = {
-//   data: PropTypes.shape({
-//     allContentfulDish: PropTypes.shape({
-//       edges: PropTypes.arrayOf({
-//         node: PropTypes.shape({
-//           title: PropTypes.string.isRequired,
-//           slug: PropTypes.string.isRequired,
-//           body: PropTypes.shape({
-//             childMarkdownRemark: PropTypes.shape({
-//               rawMarkdownBody: PropTypes.string,
-//             }),
-//           }),
-//           image: PropTypes.shape({
-//             fluid: { ...fluidImgType },
-//           }),
-//           createdAt: PropTypes.string,
-//         }),
-//       }),
-//     }),
-//   }),
-// }

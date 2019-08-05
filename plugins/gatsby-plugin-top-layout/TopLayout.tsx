@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import JssProvider from "react-jss/lib/JssProvider"
 import CssBaseline from "@material-ui/core/CssBaseline"
@@ -9,7 +8,11 @@ import muiTheme from "../../src/theme/gatsby-theme-material-ui/theme"
 
 const generateClassName = createGenerateClassName()
 
-export default function TopLayout(props) {
+// interface TopLayout {
+//   children: JSX.Element[]
+// }
+
+export default function TopLayout(props): JSX.Element {
   return (
     <>
       <Helmet>
@@ -28,8 +31,4 @@ export default function TopLayout(props) {
       </JssProvider>
     </>
   )
-}
-
-TopLayout.propTypes = {
-  children: PropTypes.node,
 }

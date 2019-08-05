@@ -38,8 +38,8 @@ exports.createPages = ({ graphql, actions }) => {
         console.log("Error retrieving contentful data", result.errors)
       }
       // Resolve the paths to our template
-      const blogPostTemplate = path.resolve("./src/templates/blogpost.jsx")
-      const dishTemplate = path.resolve("./src/templates/dish.jsx")
+      const blogPostTemplate = path.resolve("./src/templates/blogpost.tsx")
+      const dishTemplate = path.resolve("./src/templates/dish.tsx")
 
       // Then for each result we create a page.
       result.data.allContentfulBlogPost.edges.forEach(edge => {

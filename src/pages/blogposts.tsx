@@ -1,5 +1,5 @@
 import React from "react"
-import PropTypes from "prop-types"
+// import PropTypes from "prop-types"
 import { graphql, Link } from "gatsby"
 import { makeStyles } from "@material-ui/core/styles"
 import Button from "@material-ui/core/Button"
@@ -9,6 +9,7 @@ import Layout from "../layouts/layout"
 import SEO from "../components/seo"
 import BlogCard from "../containers/blog-card"
 import { H3 } from "../components/typo"
+import { FluidImgType } from "../types"
 
 const useStyles = makeStyles(theme => ({
   heading: {
@@ -17,7 +18,32 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const BlogPostsPage = ({ data }) => {
+interface BlogPostsPageTypes {
+  data: {
+    allContentfulBlogPost: {
+      edges: [
+        {
+          node: {
+            slug: string
+            title: string
+            createdAt: string
+            body: {
+              childMarkdownRemark: {
+                excerpt: string
+              }
+            }
+            image: {
+              fluid: FluidImgType
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+
+const BlogPostsPage = (props: BlogPostsPageTypes) => {
+  const { data } = props
   const classes = useStyles()
 
   return (
@@ -27,7 +53,7 @@ const BlogPostsPage = ({ data }) => {
         <Container maxWidth="md">
           <H3 className={classes.heading}>Posts</H3>
 
-          <List className={classes.root}>
+          <List>
             {data.allContentfulBlogPost.edges.map(({ node }) => (
               <BlogCard key={node.slug} node={node} />
             ))}
@@ -71,16 +97,16 @@ export const postQuery = graphql`
   }
 `
 
-BlogPostsPage.propTypes = {
-  data: PropTypes.shape({
-    allContentfulBlogPost: PropTypes.shape({
-      edges: PropTypes.arrayOf(
-        PropTypes.shape({
-          node: PropTypes.shape({
-            slug: PropTypes.string.isRequired,
-          }),
-        })
-      ),
-    }),
-  }),
-}
+// BlogPostsPage.propTypes = {
+//   data: PropTypes.shape({
+//     allContentfulBlogPost: PropTypes.shape({
+//       edges: PropTypes.arrayOf(
+//         PropTypes.shape({
+//           node: PropTypes.shape({
+//             slug: PropTypes.string.isRequired,
+//           }),
+//         })
+//       ),
+//     }),
+//   }),
+// }

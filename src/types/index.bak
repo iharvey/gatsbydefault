@@ -8,10 +8,10 @@ export const fixedImgType = shape({
   width: number,
 })
 
-export const fluidImgType = shape({
-  aspectRatio: number,
-  base64: string,
-  sizes: string,
-  src: string,
-  srcSet: string,
-})
+export interface FluidImgType {
+  aspectRatio: number;
+  base64: string;
+  sizes: string;
+  src: string;
+  srcSet: string;
+}

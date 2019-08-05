@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { makeStyles } from "@material-ui/core/styles"
@@ -10,7 +9,7 @@ import SEO from "../components/seo"
 import Layout from "../layouts/layout"
 import Markdown from "../components/Markdown"
 import { H3 } from "../components/typo"
-import { fluidImgType } from "../types"
+import { FluidImgType } from "../types"
 
 const useStyles = makeStyles(theme => ({
   heading: {
@@ -26,9 +25,28 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const DishTemplate = ({ data }) => {
+export interface DishTemplateProps {
+  data: {
+    contentfulDish: {
+      body: {
+        body: string
+        childMarkdownRemark: {
+          rawMarkdownBody: string
+        }
+      }
+      image: {
+        fluid: FluidImgType
+      }
+      slug: string
+      tags: string[]
+      title: string
+    }
+  }
+}
+
+const DishTemplate = (props: DishTemplateProps) => {
   const classes = useStyles()
-  const { title, body, image, tags = [] } = data.contentfulDish
+  const { title, body, image, tags = [] } = props.data.contentfulDish
 
   return (
     <Layout>
@@ -78,34 +96,3 @@ export const pageQuery = graphql`
     }
   }
 `
-
-DishTemplate.defaultProps = {
-  title: "",
-  body: {
-    childMarkdownRemark: {
-      rawMarkdownBody: "",
-    },
-  },
-  tags: [],
-}
-
-DishTemplate.propTypes = {
-  data: PropTypes.shape({
-    contentfulDish: PropTypes.shape({
-      body: PropTypes.shape({
-        childMarkdownRemark: PropTypes.shape({
-          rawMarkdownBody: PropTypes.string.isRequired,
-        }).isRequired,
-      }).isRequired,
-      fluid: fluidImgType,
-      image: PropTypes.shape({
-        fluid: PropTypes.shape({
-          src: PropTypes.string,
-        }),
-      }),
-      slug: PropTypes.string.isRequired,
-      tags: PropTypes.arrayOf(PropTypes.string),
-      title: PropTypes.string.isRequired,
-    }),
-  }),
-}

@@ -45,7 +45,12 @@ const headerLinks = [
   },
 ]
 
-export default function ButtonAppBar() {
+interface HeaderProps {
+  siteTitle: string
+}
+
+const Header = (props: HeaderProps): JSX.Element => {
+  const { siteTitle } = props
   const classes = useStyles()
 
   return (
@@ -53,7 +58,7 @@ export default function ButtonAppBar() {
       <AppBar position="static">
         <Toolbar>
           <Link to="/" className={classes.menuHome}>
-            <H4>Header</H4>
+            <H4>{siteTitle}</H4>
           </Link>
 
           <span className={classes.titleLeft} />
@@ -72,3 +77,4 @@ export default function ButtonAppBar() {
     </header>
   )
 }
+export default Header

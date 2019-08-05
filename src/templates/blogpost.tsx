@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { makeStyles } from "@material-ui/core/styles"
@@ -10,6 +9,7 @@ import SEO from "../components/seo"
 import Layout from "../layouts/layout"
 import Markdown from "../components/Markdown"
 import { H3 } from "../components/typo"
+import { FluidImgType } from "../types"
 
 const useStyles = makeStyles(theme => ({
   heading: {
@@ -30,9 +30,28 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const BlogPostTemplate = ({ data }) => {
+export interface BlogPostTemplateProps {
+  data: {
+    contentfulBlogPost: {
+      body: {
+        body: string
+        childMarkdownRemark: {
+          html: string
+        }
+      }
+      image: {
+        fluid: FluidImgType
+      }
+      slug: string
+      tags: string[]
+      title: string
+    }
+  }
+}
+
+const BlogPostTemplate = (props: BlogPostTemplateProps) => {
   const classes = useStyles()
-  const { title, body, image, tags = [] } = data.contentfulBlogPost
+  const { title, body, image, tags = [] } = props.data.contentfulBlogPost
 
   return (
     <Layout>
@@ -40,7 +59,6 @@ const BlogPostTemplate = ({ data }) => {
       <Container maxWidth="md">
         <div className="blogpost">
           {image ? <Img fluid={image.fluid} alt={title} className={classes.hero} /> : null}
-
           <H3 className={classes.heading}>{title}</H3>
           <div className="tags">
             {tags && tags.map(tag => <Chip className={classes.chip} size="small" label={tag} key={`tag__${tag}`} />)}
@@ -82,20 +100,20 @@ export const pageQuery = graphql`
   }
 `
 
-BlogPostTemplate.propTypes = {
-  data: PropTypes.shape({
-    contentfulBlogPost: PropTypes.shape({
-      body: PropTypes.shape({
-        body: PropTypes.string,
-      }),
-      image: PropTypes.shape({
-        fluid: PropTypes.shape({
-          src: PropTypes.string,
-        }),
-      }),
-      slug: PropTypes.string,
-      tags: PropTypes.arrayOf(PropTypes.string),
-      title: PropTypes.string,
-    }),
-  }),
-}
+// BlogPostTemplate.propTypes = {
+//   data: PropTypes.shape({
+//     contentfulBlogPost: PropTypes.shape({
+//       body: PropTypes.shape({
+//         body: PropTypes.string,
+//       }),
+//       image: PropTypes.shape({
+//         fluid: PropTypes.shape({
+//           src: PropTypes.string,
+//         }),
+//       }),
+//       slug: PropTypes.string,
+//       tags: PropTypes.arrayOf(PropTypes.string),
+//       title: PropTypes.string,
+//     }),
+//   }),
+// }

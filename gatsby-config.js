@@ -36,6 +36,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-top-layout`,
     `gatsby-transformer-remark`,
+    `gatsby-plugin-typescript`,
     {
       resolve: `gatsby-plugin-material-ui`,
       options: {
