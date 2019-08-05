@@ -9,7 +9,7 @@ import Layout from "../layouts/layout"
 import SEO from "../components/seo"
 import BlogCard from "../containers/blog-card"
 import { H3 } from "../components/typo"
-import { FluidImgType } from "../types"
+import { BlogPostNodeShort } from "../types"
 
 const useStyles = makeStyles(theme => ({
   heading: {
@@ -17,30 +17,6 @@ const useStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(3),
   },
 }))
-
-interface BlogPostsPageTypes {
-  data: {
-    allContentfulBlogPost: {
-      edges: [
-        {
-          node: {
-            slug: string
-            title: string
-            createdAt: string
-            body: {
-              childMarkdownRemark: {
-                excerpt: string
-              }
-            }
-            image: {
-              fluid: FluidImgType
-            }
-          }
-        }
-      ]
-    }
-  }
-}
 
 const BlogPostsPage = (props: BlogPostsPageTypes) => {
   const { data } = props
@@ -72,6 +48,18 @@ const BlogPostsPage = (props: BlogPostsPageTypes) => {
 
 export default BlogPostsPage
 
+type BlogPostsPageTypes = {
+  data: {
+    allContentfulBlogPost: {
+      edges: [
+        {
+          node: BlogPostNodeShort
+        }
+      ]
+    }
+  }
+}
+
 export const postQuery = graphql`
   query postQuery {
     allContentfulBlogPost {
@@ -79,7 +67,6 @@ export const postQuery = graphql`
         node {
           title
           slug
-          tags
           body {
             childMarkdownRemark {
               excerpt
@@ -96,17 +83,3 @@ export const postQuery = graphql`
     }
   }
 `
-
-// BlogPostsPage.propTypes = {
-//   data: PropTypes.shape({
-//     allContentfulBlogPost: PropTypes.shape({
-//       edges: PropTypes.arrayOf(
-//         PropTypes.shape({
-//           node: PropTypes.shape({
-//             slug: PropTypes.string.isRequired,
-//           }),
-//         })
-//       ),
-//     }),
-//   }),
-// }

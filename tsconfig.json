@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -16,6 +16,5 @@
     "jsx": "preserve"
   },
   "include": ["src"],
-  "exclude": ["node_modules", "public", "coverage", ".cache", ".vscode"],
-  "baseUrl": "/src/types"
+  "exclude": ["node_modules", "public", "coverage", ".cache", ".vscode"]
 }

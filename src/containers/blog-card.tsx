@@ -6,7 +6,7 @@ import Grid from "@material-ui/core/Grid"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemText from "@material-ui/core/ListItemText"
 import ImageIcon from "@material-ui/icons/Image"
-import { FluidImgType } from "../types"
+import { BlogPostNodeShort } from "../types"
 
 const useStyles = makeStyles(theme => ({
   gridItem: {
@@ -18,23 +18,11 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-interface BlogCardType {
-  node: {
-    slug: string
-    title: string
-    createdAt: string
-    body: {
-      childMarkdownRemark: {
-        excerpt: string
-      }
-    }
-    image: {
-      fluid: FluidImgType
-    }
-  }
+interface BlogCard {
+  node: BlogPostNodeShort
 }
 
-const BlogCard = (props: BlogCardType) => {
+const BlogCard = (props: BlogCard) => {
   const classes = useStyles()
   const { node } = props
 

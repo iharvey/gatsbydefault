@@ -25,7 +25,7 @@ const styles = (theme: Theme) =>
     },
   })
 
-interface TypoClassPropsType {
+type TypoClassPropsType = {
   children?: React.ReactNode
   className?: string
   id?: string
@@ -61,10 +61,10 @@ const options = {
   },
 }
 
-interface MarkdownFnPropsType {
+interface MarkdownFnProps {
   children?: string
 }
 
-export default function Markdown(props: MarkdownFnPropsType) {
-  return <ReactMarkdown options={options}>{props.children}</ReactMarkdown>
+export default function Markdown({ children }: MarkdownFnProps) {
+  return <ReactMarkdown options={options}>{children}</ReactMarkdown>
 }

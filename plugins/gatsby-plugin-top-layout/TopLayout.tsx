@@ -8,11 +8,7 @@ import muiTheme from "../../src/theme/gatsby-theme-material-ui/theme"
 
 const generateClassName = createGenerateClassName()
 
-// interface TopLayout {
-//   children: JSX.Element[]
-// }
-
-export default function TopLayout(props): JSX.Element {
+export default function TopLayout(props) {
   return (
     <>
       <Helmet>

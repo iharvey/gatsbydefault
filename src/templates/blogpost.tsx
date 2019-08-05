@@ -30,28 +30,9 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-export interface BlogPostTemplateProps {
-  data: {
-    contentfulBlogPost: {
-      body: {
-        body: string
-        childMarkdownRemark: {
-          html: string
-        }
-      }
-      image: {
-        fluid: FluidImgType
-      }
-      slug: string
-      tags: string[]
-      title: string
-    }
-  }
-}
-
-const BlogPostTemplate = (props: BlogPostTemplateProps) => {
+const BlogPostTemplate = ({ data }: BlogPostTemplateProps) => {
   const classes = useStyles()
-  const { title, body, image, tags = [] } = props.data.contentfulBlogPost
+  const { title, body, image, tags = [] } = data.contentfulBlogPost
 
   return (
     <Layout>
@@ -79,16 +60,29 @@ const BlogPostTemplate = (props: BlogPostTemplateProps) => {
 
 export default BlogPostTemplate
 
+type BlogPostTemplateProps = {
+  data: {
+    contentfulBlogPost: {
+      title: string
+      slug: string
+      body: {
+        body: string
+      }
+      image: {
+        fluid: FluidImgType
+      }
+      tags: string[]
+    }
+  }
+}
+
 export const pageQuery = graphql`
-  query($slug: String!) {
+  query pageQuery($slug: String!) {
     contentfulBlogPost(slug: { eq: $slug }) {
       title
       slug
       body {
         body
-        childMarkdownRemark {
-          html
-        }
       }
       image {
         fluid {
@@ -99,21 +93,3 @@ export const pageQuery = graphql`
     }
   }
 `
-
-// BlogPostTemplate.propTypes = {
-//   data: PropTypes.shape({
-//     contentfulBlogPost: PropTypes.shape({
-//       body: PropTypes.shape({
-//         body: PropTypes.string,
-//       }),
-//       image: PropTypes.shape({
-//         fluid: PropTypes.shape({
-//           src: PropTypes.string,
-//         }),
-//       }),
-//       slug: PropTypes.string,
-//       tags: PropTypes.arrayOf(PropTypes.string),
-//       title: PropTypes.string,
-//     }),
-//   }),
-// }

@@ -2,7 +2,6 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { makeStyles } from "@material-ui/core/styles"
-import Chip from "@material-ui/core/Chip"
 import Divider from "@material-ui/core/Divider"
 import Grid from "@material-ui/core/Grid"
 import SEO from "../components/seo"
@@ -25,28 +24,9 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-export interface DishTemplateProps {
-  data: {
-    contentfulDish: {
-      body: {
-        body: string
-        childMarkdownRemark: {
-          rawMarkdownBody: string
-        }
-      }
-      image: {
-        fluid: FluidImgType
-      }
-      slug: string
-      tags: string[]
-      title: string
-    }
-  }
-}
-
-const DishTemplate = (props: DishTemplateProps) => {
+const DishTemplate = ({ data }: DishTemplateProps) => {
   const classes = useStyles()
-  const { title, body, image, tags = [] } = props.data.contentfulDish
+  const { title, body, image } = data.contentfulDish
 
   return (
     <Layout>
@@ -60,9 +40,6 @@ const DishTemplate = (props: DishTemplateProps) => {
 
           <Grid item xs={12} sm={6}>
             <H3 className={classes.heading}>{title}</H3>
-            <div className="tags">
-              {tags && tags.map(tag => <Chip className={classes.chip} size="small" label={tag} key={`tag__${tag}`} />)}
-            </div>
             <Divider className={classes.divider} />
             <Markdown>{body.childMarkdownRemark.rawMarkdownBody}</Markdown>
           </Grid>
@@ -77,6 +54,23 @@ const DishTemplate = (props: DishTemplateProps) => {
 }
 
 export default DishTemplate
+
+interface DishTemplateProps {
+  data: {
+    contentfulDish: {
+      title: string
+      slug: string
+      body: {
+        childMarkdownRemark: {
+          rawMarkdownBody: string
+        }
+      }
+      image: {
+        fluid: FluidImgType
+      }
+    }
+  }
+}
 
 export const pageQuery = graphql`
   query($slug: String!) {

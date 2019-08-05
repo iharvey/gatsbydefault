@@ -6,20 +6,11 @@
  */
 
 import React from "react"
-import Helmet from "react-helmet"
+import Helmet, { HelmetProps } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
-// import HelmetProps from "@types/react-helmet"
 
-interface SEOProps {
+interface SEOProps extends HelmetProps {
   lang?: string
-  meta?: [
-    {
-      property: string
-      content: string
-      name?: undefined
-    }
-  ]
-  title: string
   image?: string | null
   description?: string
 }
@@ -85,24 +76,10 @@ function SEO(props: SEOProps) {
           name: `twitter:description`,
           content: metaDescription,
         },
-      ].concat(meta)}
+        ...meta,
+      ]}
     />
   )
 }
-
-// SEO.defaultProps = {
-//   lang: `en`,
-//   meta: [],
-//   description: ``,
-//   image: null,
-// }
-
-// SEO.propTypes = {
-//   description: PropTypes.string,
-//   lang: PropTypes.string,
-//   meta: PropTypes.arrayOf(PropTypes.object),
-//   title: PropTypes.string.isRequired,
-//   image: PropTypes.string,
-// }
 
 export default SEO

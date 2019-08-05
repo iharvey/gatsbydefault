@@ -1,4 +1,18 @@
-export interface FluidImgType {
+export type BlogPostNodeShort = {
+  title: string
+  slug: string
+  createdAt: string
+  body: {
+    childMarkdownRemark: {
+      excerpt: string
+    }
+  }
+  image: {
+    fluid: FluidImgType
+  }
+}
+
+export type FluidImgType = {
   aspectRatio: number
   src: string
   srcSet: string
@@ -9,7 +23,7 @@ export interface FluidImgType {
   tracedSVG?: string
 }
 
-export interface FixedImgType {
+export type FixedImgType = {
   width: number
   height: number
   src: string

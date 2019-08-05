@@ -1,14 +1,7 @@
 import * as React from "react"
 import Typography, { TypographyProps } from "@material-ui/core/Typography"
-interface TypeMakerTypeBase {
-  children: JSX.Element | string
-  className?: string
-  variant?: string
-}
 
-type TypoProps = TypographyProps & TypeMakerTypeBase
-
-interface TypoType {
+interface TypoProps extends TypographyProps {
   children: JSX.Element | string
   className?: string
 }
@@ -20,6 +13,11 @@ const typeMaker = (props: TypoProps) => {
       {children}
     </Typography>
   )
+}
+
+interface TypoType {
+  children: JSX.Element | string
+  className?: string
 }
 
 export const Body1 = (props: TypoType) =>
