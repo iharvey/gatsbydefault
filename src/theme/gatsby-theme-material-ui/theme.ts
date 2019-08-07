@@ -1,11 +1,11 @@
-import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles"
-import { red } from "@material-ui/core/colors"
-import { ThemeOptions } from "@material-ui/core/styles/createMuiTheme"
+import { red } from "@material-ui/core/colors";
+import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles";
+import { ThemeOptions } from "@material-ui/core/styles/createMuiTheme";
 
-export const headerFont = "'Work Sans', sans-serif"
-export const bodyFont = "'Quattrocento Sans', sans-serif;"
+export const headerFont: string = "'Work Sans', sans-serif"
+export const bodyFont: string = "'Quattrocento Sans', sans-serif;"
 
-const boldWeight = 700
+const boldWeight: number = 700
 
 const defaultThemeObj: ThemeOptions = {
   typography: {

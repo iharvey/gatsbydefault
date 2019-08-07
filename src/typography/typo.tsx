@@ -1,5 +1,6 @@
-import * as React from "react"
-import Typography, { TypographyProps } from "@material-ui/core/Typography"
+import * as React from "react";
+
+import Typography, { TypographyProps } from "@material-ui/core/Typography";
 
 interface TypoProps extends TypographyProps {
   children: JSX.Element | string

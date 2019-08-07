@@ -48,6 +48,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
+        /* eslint-disable @typescript-eslint/camelcase */
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
@@ -55,6 +56,7 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        /* eslint-ensable @typescript-eslint/camelcase */
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

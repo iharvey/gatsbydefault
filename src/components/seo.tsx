@@ -4,10 +4,11 @@
  *
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
+import React from "react";
 
-import React from "react"
-import Helmet, { HelmetProps } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby";
+import Helmet, { HelmetProps } from "react-helmet";
+
 
 interface SEOProps extends HelmetProps {
   lang?: string

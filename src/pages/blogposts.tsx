@@ -1,15 +1,17 @@
-import React from "react"
-// import PropTypes from "prop-types"
-import { graphql, Link } from "gatsby"
-import { makeStyles } from "@material-ui/core/styles"
-import Button from "@material-ui/core/Button"
-import List from "@material-ui/core/List"
-import Container from "@material-ui/core/Container"
-import Layout from "../layouts/layout"
-import SEO from "../components/seo"
-import BlogCard from "../containers/blog-card"
-import { H3 } from "../components/typo"
-import { BlogPostNodeShort } from "../types"
+import React from "react";
+
+import Button from "@material-ui/core/Button";
+import Container from "@material-ui/core/Container";
+import List from "@material-ui/core/List";
+import { makeStyles } from "@material-ui/core/styles";
+import { graphql, Link } from "gatsby";
+
+import SEO from "../components/seo";
+import BlogCard from "../containers/blog-card";
+import Layout from "../layouts/layout";
+import { H3 } from "../typography";
+
+import { BlogPostNodeShort } from "../types";
 
 const useStyles = makeStyles(theme => ({
   heading: {
@@ -67,6 +69,7 @@ export const postQuery = graphql`
         node {
           title
           slug
+          createdAt(formatString: "MM-DD-YYYY")
           body {
             childMarkdownRemark {
               excerpt
@@ -77,7 +80,6 @@ export const postQuery = graphql`
               ...GatsbyContentfulFluid
             }
           }
-          createdAt(formatString: "MM-DD-YYYY")
         }
       }
     }

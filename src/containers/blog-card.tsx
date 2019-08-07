@@ -1,12 +1,14 @@
-import React from "react"
-import { makeStyles } from "@material-ui/core/styles"
-import { Link } from "gatsby"
-import Img from "gatsby-image"
-import Grid from "@material-ui/core/Grid"
-import ListItem from "@material-ui/core/ListItem"
-import ListItemText from "@material-ui/core/ListItemText"
-import ImageIcon from "@material-ui/icons/Image"
-import { BlogPostNodeShort } from "../types"
+import React from "react";
+
+import Grid from "@material-ui/core/Grid";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import { makeStyles } from "@material-ui/core/styles";
+import ImageIcon from "@material-ui/icons/Image";
+import { Link } from "gatsby";
+import Img from "gatsby-image";
+
+import { BlogPostNodeShort } from "../types";
 
 const useStyles = makeStyles(theme => ({
   gridItem: {

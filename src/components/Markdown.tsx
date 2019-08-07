@@ -1,12 +1,10 @@
-/* eslint-disable react/display-name */
-import * as React from "react"
-import ReactMarkdown, { ComponentOverride } from "markdown-to-jsx"
-import { withStyles, WithStyles, createStyles } from "@material-ui/core/styles"
-import { TypographyOptions } from "@material-ui/core/styles/createTypography"
-import Typography from "@material-ui/core/Typography"
-import Link from "@material-ui/core/Link"
-import Paper from "@material-ui/core/Paper"
-import { Theme } from "@material-ui/core/styles"
+import * as React from "react";
+
+import Link from "@material-ui/core/Link";
+import Paper from "@material-ui/core/Paper";
+import { createStyles, Theme, WithStyles, withStyles } from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
+import ReactMarkdown from "markdown-to-jsx";
 
 const htmlFontSize: number = 16
 
@@ -61,10 +59,6 @@ const options = {
   },
 }
 
-interface MarkdownFnProps {
-  children?: string
-}
-
-export default function Markdown({ children }: MarkdownFnProps) {
+export default function Markdown({ children }: { children: string }) {
   return <ReactMarkdown options={options}>{children}</ReactMarkdown>
 }

@@ -1,14 +1,17 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-import Img from "gatsby-image"
-import { makeStyles } from "@material-ui/core/styles"
-import Divider from "@material-ui/core/Divider"
-import Grid from "@material-ui/core/Grid"
-import SEO from "../components/seo"
-import Layout from "../layouts/layout"
-import Markdown from "../components/Markdown"
-import { H3 } from "../components/typo"
-import { FluidImgType } from "../types"
+import React from "react";
+
+import Divider from "@material-ui/core/Divider";
+import Grid from "@material-ui/core/Grid";
+import { makeStyles } from "@material-ui/core/styles";
+import { graphql, Link } from "gatsby";
+import Img from "gatsby-image";
+
+import Markdown from "../components/Markdown";
+import SEO from "../components/seo";
+import Layout from "../layouts/layout";
+import { H3 } from "../typography";
+
+import { FluidImgType } from "../types";
 
 const useStyles = makeStyles(theme => ({
   heading: {

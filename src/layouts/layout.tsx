@@ -1,10 +1,12 @@
-import * as React from "react"
-import { StaticQuery, graphql } from "gatsby"
-import Container from "@material-ui/core/Container"
-import Header from "../theme/gatsby-theme-material-ui-layout/layout/header"
-import Footer from "../containers/footer"
+import * as React from "react";
 
-import "./layout.css"
+import Container from "@material-ui/core/Container";
+import { graphql, StaticQuery } from "gatsby";
+
+import Footer from "../containers/footer";
+import Header from "../theme/gatsby-theme-material-ui-layout/layout/header";
+
+import "./layout.css";
 
 const SiteMain: React.SFC<LayoutPropsWithData> = ({ children, site }) => {
   return (

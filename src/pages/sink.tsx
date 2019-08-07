@@ -1,29 +1,37 @@
-import React from "react"
-// import { makeStyles } from "@material-ui/core/styles"
-import Layout from "../layouts/layout"
-// import Grid from "@material-ui/core/Grid"
-// import Button from "@material-ui/core/Button"
-// import Typography from "@material-ui/core/Typography"
-// import IconButton from "@material-ui/core/IconButton"
-// import DeleteIcon from "@material-ui/icons/Delete"
-// import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward"
+import React from "react";
 
-// const useStyles = makeStyles(theme => ({
-//   button: {
-//     margin: theme.spacing(1),
-//   },
-//   input: {
-//     display: "none",
-//   },
-// }))
+import Button from "@material-ui/core/Button";
+import Grid from "@material-ui/core/Grid";
+import IconButton from "@material-ui/core/IconButton";
+import { makeStyles } from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
+import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
+import DeleteIcon from "@material-ui/icons/Delete";
+
+import Layout from "../layouts/layout";
+import { Body1, H2 } from "../typography";
+
+const useStyles = makeStyles(theme => ({
+  button: {
+    margin: theme.spacing(1),
+  },
+  input: {
+    display: "none",
+  },
+  margin: {
+    margin: theme.spacing(1),
+  },
+}))
 
 const KitchenSink = () => {
-  // const classes = useStyles()
+  const classes = useStyles()
 
   return (
     <Layout>
       Woo
-      {/* <div>
+      <H2>Title Here</H2>
+      <Body1>Welcome to your new Gatsby site.</Body1>
+      <div>
         <Button variant="contained" className={classes.button}>
           Default
         </Button>
@@ -46,7 +54,6 @@ const KitchenSink = () => {
           </Button>
         </label>
       </div>
-
       <div>
         <Button className={classes.button}>Default</Button>
         <Button color="primary" className={classes.button}>
@@ -68,7 +75,6 @@ const KitchenSink = () => {
           </Button>
         </label>
       </div>
-
       <div>
         <Button variant="outlined" className={classes.button}>
           Default
@@ -95,7 +101,6 @@ const KitchenSink = () => {
           Inherit
         </Button>
       </div>
-
       <div>
         <Button variant="outlined" size="small" color="primary" className={classes.button}>
           Small
@@ -107,7 +112,6 @@ const KitchenSink = () => {
           Large
         </Button>
       </div>
-
       <div>
         <IconButton aria-label="delete" className={classes.margin} size="small">
           <ArrowDownwardIcon fontSize="inherit" />
@@ -122,9 +126,7 @@ const KitchenSink = () => {
           <DeleteIcon fontSize="large" />
         </IconButton>
       </div>
-
       <hr />
-
       <Grid container spacing={2}>
         <Grid key={`grid__1`} item xs={12} sm={6}>
           <Typography variant="h1" component="h2" gutterBottom>
@@ -174,7 +176,7 @@ const KitchenSink = () => {
             overline text
           </Typography>
         </Grid>
-      </Grid> */}
+      </Grid>
     </Layout>
   )
 }

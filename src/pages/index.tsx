@@ -1,11 +1,13 @@
-import React from "react"
-import { Link } from "gatsby"
-import Button from "@material-ui/core/Button"
-import Grid from "@material-ui/core/Grid"
-import { H2, Body1 } from "../components/typo"
-import Layout from "../layouts/layout"
-import Hero from "../components/hero"
-import SEO from "../components/seo"
+import React from "react";
+
+import Button from "@material-ui/core/Button";
+import Grid from "@material-ui/core/Grid";
+import { Link } from "gatsby";
+
+import Hero from "../components/hero";
+import SEO from "../components/seo";
+import Layout from "../layouts/layout";
+import { Body1, H2 } from "../typography/typo";
 
 const IndexPage = () => (
   <>

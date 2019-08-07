@@ -1,16 +1,18 @@
-import React from "react"
+import React from "react";
+
+import Button from "@material-ui/core/Button";
+import Grid from "@material-ui/core/Grid";
+import { makeStyles } from "@material-ui/core/styles";
+import { graphql, Link } from "gatsby";
+
+import SEO from "../components/seo";
+import DishCard from "../containers/dish-card";
+import Layout from "../layouts/layout";
+import { H3 } from "../typography";
+
+import { FluidImgType } from "../types";
+
 // import PropTypes from "prop-types"
-import { graphql, Link } from "gatsby"
-import { makeStyles } from "@material-ui/core/styles"
-import Button from "@material-ui/core/Button"
-import Grid from "@material-ui/core/Grid"
-
-import { H3 } from "../components/typo"
-import Layout from "../layouts/layout"
-import SEO from "../components/seo"
-import DishCard from "../containers/dish-card"
-import { FluidImgType } from "../types"
-
 // import Card from "@material-ui/core/Card"
 // import CardContent from "@material-ui/core/CardContent"
 // import { Body1 } from "../components/typo"
