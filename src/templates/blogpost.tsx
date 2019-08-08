@@ -63,7 +63,7 @@ const BlogPostTemplate = ({ data }: BlogPostTemplateProps) => {
 
 export default BlogPostTemplate
 
-type BlogPostTemplateProps = {
+interface BlogPostTemplateProps {
   data: {
     contentfulBlogPost: {
       title: string

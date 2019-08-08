@@ -13,42 +13,51 @@
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
   "eslint.autoFixOnSave": true,
-  // "eslint.validate": [
-  //   {
-  //     "language": "javascript",
-  //     "autoFix": true
-  //   },
-  //   {
-  //     "language": "javascriptreact",
-  //     "autoFix": true
-  //   },
-  //   {
-  //     "language": "typescript",
-  //     "autoFix": true
-  //   },
-  //   {
-  //     "language": "typescriptreact",
-  //     "autoFix": true
-  //   }
-  // ],
-  // disable editor formatting, so eslint can handle it
-  // "[javascriptreact]": {
-  //   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  //   "editor.formatOnSave": false
-  // },
-  // "[html]": {
-  //   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  //   "editor.formatOnSave": false
-  // },
-  // "workbench.settings.useSplitJSON": true,
-  // "[json]": {
-  //   "editor.defaultFormatter": "vscode.json-language-features",
-  //   "editor.formatOnSave": false
-  // },
+
+  // // disable editor formatting, so eslint can handle it
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.formatOnSave": false
+  },
   "typescript.tsdk": "./node_modules/typescript/lib",
   "debug.node.autoAttach": "on",
   "prettier.eslintIntegration": false,
-  "prettier.stylelintIntegration": false
-  // "javascript.validate.enable": false,
-  // "typescript.validate.enable": false
+  "prettier.stylelintIntegration": false,
+  "javascript.validate.enable": false,
+  "typescript.validate.enable": true,
+  "eslint.enable": true,
+  "eslint.alwaysShowStatus": true,
+  "eslint.provideLintTask": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    {
+      "language": "typescript",
+      "autoFix": true
+    },
+    {
+      "language": "typescriptreact",
+      "autoFix": true
+    }
+  ]
 }

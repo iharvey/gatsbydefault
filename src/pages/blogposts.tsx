@@ -50,7 +50,7 @@ const BlogPostsPage = (props: BlogPostsPageTypes) => {
 
 export default BlogPostsPage
 
-type BlogPostsPageTypes = {
+interface BlogPostsPageTypes {
   data: {
     allContentfulBlogPost: {
       edges: [

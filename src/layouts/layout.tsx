@@ -1,14 +1,14 @@
-import * as React from "react";
+import * as React from "react"
 
-import Container from "@material-ui/core/Container";
-import { graphql, StaticQuery } from "gatsby";
+import Container from "@material-ui/core/Container"
+import { graphql, StaticQuery } from "gatsby"
 
-import Footer from "../containers/footer";
-import Header from "../theme/gatsby-theme-material-ui-layout/layout/header";
+import Footer from "../containers/footer"
+import Header from "../theme/gatsby-theme-material-ui-layout/layout/header"
 
-import "./layout.css";
+import "./layout.css"
 
-const SiteMain: React.SFC<LayoutPropsWithData> = ({ children, site }) => {
+const SiteMain: React.FunctionComponent<LayoutPropsWithData> = ({ children, site }) => {
   return (
     <>
       <Header siteTitle={site.siteMetadata.title} />
@@ -22,11 +22,21 @@ const SiteMain: React.SFC<LayoutPropsWithData> = ({ children, site }) => {
   )
 }
 
+export const LayoutQuery = graphql`
+  query SiteTitleQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`
+
 export default ({ children }: LayoutProps) => {
   return (
     <StaticQuery
       query={LayoutQuery}
-      render={({ site }: LayoutPropsWithData) => <SiteMain site={site} children={children} />}
+      render={({ site }: LayoutPropsWithData) => <SiteMain site={site}>{children}</SiteMain>}
     />
   )
 }
@@ -41,13 +51,3 @@ interface LayoutPropsWithData extends LayoutProps {
     }
   }
 }
-
-export const LayoutQuery = graphql`
-  query SiteTitleQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`

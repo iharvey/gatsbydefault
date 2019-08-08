@@ -1,4 +1,4 @@
-export type BlogPostNodeShort = {
+export interface BlogPostNodeShort {
   title: string
   slug: string
   createdAt: string
@@ -12,7 +12,7 @@ export type BlogPostNodeShort = {
   }
 }
 
-export type FluidImgType = {
+export interface FluidImgType {
   aspectRatio: number
   src: string
   srcSet: string
@@ -23,7 +23,7 @@ export type FluidImgType = {
   tracedSVG?: string
 }
 
-export type FixedImgType = {
+export interface FixedImgType {
   width: number
   height: number
   src: string
