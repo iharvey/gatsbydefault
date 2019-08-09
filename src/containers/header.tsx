@@ -24,11 +24,8 @@ const useStyles = makeStyles(theme => ({
     textDecoration: "none",
     color: "inherit",
   },
-  titleLeft: {
+  separate: {
     marginLeft: "auto",
-  },
-  menuBurger: {
-    marginLeft: theme.spacing(1),
   },
 }))
 
@@ -63,7 +60,7 @@ const Header = (props: HeaderProps): JSX.Element => {
             <H4>{siteTitle}</H4>
           </Link>
 
-          <span className={classes.titleLeft} />
+          <span className={classes.separate} />
 
           {headerLinks.map(link => (
             <Link key={link.url} to={link.url} className={classes.menuButton}>
@@ -71,7 +68,7 @@ const Header = (props: HeaderProps): JSX.Element => {
             </Link>
           ))}
 
-          <IconButton edge="start" className={classes.menuBurger} color="inherit" aria-label="Menu">
+          <IconButton edge="start" color="inherit" aria-label="Menu">
             <MenuIcon />
           </IconButton>
         </Toolbar>

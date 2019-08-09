@@ -6,7 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { graphql, Link } from "gatsby";
 
 import SEO from "../components/seo";
-import DishCard from "../containers/dish-card";
+import DishCard from "../components/dish-card";
 import Layout from "../layouts/layout";
 import { H3 } from "../typography";
 

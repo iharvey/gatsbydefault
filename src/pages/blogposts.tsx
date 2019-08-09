@@ -7,7 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { graphql, Link } from "gatsby";
 
 import SEO from "../components/seo";
-import BlogCard from "../containers/blog-card";
+import BlogCard from "../components/blog-card";
 import Layout from "../layouts/layout";
 import { H3 } from "../typography";
 
