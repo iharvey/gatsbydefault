@@ -4834,7 +4834,7 @@ export type AllBlogPostsPageQuery = { allContentfulBlogPost: { edges: Array<{ no
 export type DishesPageQueryVariables = {};
 
 
-export type DishesPageQuery = { allContentfulDish: { edges: Array<{ node: (Pick<ContentfulDish, 'title' | 'slug' | 'createdAt'> & { body: Maybe<{ childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'rawMarkdownBody'>> }>, image: Maybe<{ fluid: Maybe<GatsbyContentfulFluidFragment> }> }) }> } };
+export type DishesPageQuery = { allContentfulDish: { edges: Array<{ node: (Pick<ContentfulDish, 'title' | 'slug' | 'createdAt'> & { body: Maybe<{ childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'html'>> }>, image: Maybe<{ fluid: Maybe<GatsbyContentfulFluidFragment> }> }) }> } };
 
 export type BlogPostPageQueryVariables = {
   slug: Scalars['String']
@@ -4848,7 +4848,7 @@ export type DishPageQueryVariables = {
 };
 
 
-export type DishPageQuery = { contentfulDish: Maybe<(Pick<ContentfulDish, 'title' | 'slug'> & { body: Maybe<{ childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'rawMarkdownBody'>> }>, image: Maybe<{ fluid: Maybe<GatsbyContentfulFluidFragment> }> })> };
+export type DishPageQuery = { contentfulDish: Maybe<(Pick<ContentfulDish, 'title' | 'slug'> & { body: Maybe<{ childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'html'>> }>, image: Maybe<{ fluid: Maybe<GatsbyContentfulFluidFragment> }> })> };
 
 export type GatsbyContentfulFixedFragment = Pick<ContentfulFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 

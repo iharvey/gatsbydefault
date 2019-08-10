@@ -1,9 +1,9 @@
-import React from "react";
+import React from "react"
 
-import { graphql, useStaticQuery } from "gatsby";
-import Img from "gatsby-image";
+import { graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
 
-import { HeroImageQuery } from "../../types/graphqlTypes";
+import { HeroImageQuery } from "../../types/graphqlTypes"
 
 
 const Hero: React.SFC = () => {

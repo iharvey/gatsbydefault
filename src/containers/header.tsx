@@ -1,13 +1,11 @@
-import React from "react";
+import React from "react"
 
-import AppBar from "@material-ui/core/AppBar";
-import IconButton from "@material-ui/core/IconButton";
-import { makeStyles } from "@material-ui/core/styles";
-import Toolbar from "@material-ui/core/Toolbar";
-import MenuIcon from "@material-ui/icons/Menu";
-import { Link } from "gatsby";
+import AppBar from "@material-ui/core/AppBar"
+import { makeStyles } from "@material-ui/core/styles"
+import Toolbar from "@material-ui/core/Toolbar"
+import { Link } from "gatsby"
 
-import { H4, H5 } from "../typography";
+import { H5, Sub1 } from "../typography"
 
 const useStyles = makeStyles(theme => ({
   header: {
@@ -57,20 +55,20 @@ const Header = (props: HeaderProps): JSX.Element => {
       <AppBar position="static">
         <Toolbar>
           <Link to="/" className={classes.menuHome}>
-            <H4>{siteTitle}</H4>
+            <H5>{siteTitle}</H5>
           </Link>
 
           <span className={classes.separate} />
 
           {headerLinks.map(link => (
             <Link key={link.url} to={link.url} className={classes.menuButton}>
-              <H5>{link.name}</H5>
+              <Sub1>{link.name}</Sub1>
             </Link>
           ))}
 
-          <IconButton edge="start" color="inherit" aria-label="Menu">
+          {/* <IconButton edge="start" color="inherit" aria-label="Menu">
             <MenuIcon />
-          </IconButton>
+          </IconButton> */}
         </Toolbar>
       </AppBar>
     </header>

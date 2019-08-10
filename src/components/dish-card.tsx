@@ -1,15 +1,15 @@
-import React from "react";
+import React from "react"
 
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import Grid from "@material-ui/core/Grid";
-import { makeStyles } from "@material-ui/core/styles";
-import { Link } from "gatsby";
-import Img from "gatsby-image";
+import Card from "@material-ui/core/Card"
+import CardContent from "@material-ui/core/CardContent"
+import Grid from "@material-ui/core/Grid"
+import { makeStyles } from "@material-ui/core/styles"
+import { Link } from "gatsby"
+import Img from "gatsby-image"
 
-import { Body1 } from "../typography";
+import { Body1 } from "../typography"
 
-import { ContentfulDish } from "../../types/graphqlTypes";
+import { ContentfulDish } from "../../types/graphqlTypes"
 
 const useStyles = makeStyles(theme => ({
   "MuiEngagementCard--01": {

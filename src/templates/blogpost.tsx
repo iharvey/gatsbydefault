@@ -1,18 +1,18 @@
-import React from "react";
+import React from "react"
 
-import Chip from "@material-ui/core/Chip";
-import Container from "@material-ui/core/Container";
-import Divider from "@material-ui/core/Divider";
-import { makeStyles } from "@material-ui/core/styles";
-import { graphql, Link } from "gatsby";
-import Img from "gatsby-image";
+import Chip from "@material-ui/core/Chip"
+import Container from "@material-ui/core/Container"
+import Divider from "@material-ui/core/Divider"
+import { makeStyles } from "@material-ui/core/styles"
+import { graphql, Link } from "gatsby"
+import Img from "gatsby-image"
 
-import Markdown from "../components/markdown";
-import SEO from "../components/seo";
-import Layout from "../layouts/layout";
-import { H3 } from "../typography";
+import Markdown from "../components/markdown"
+import SEO from "../components/seo"
+import Layout from "../layouts/layout"
+import { H3 } from "../typography"
 
-import { BlogPostPageQuery } from "../../types/graphqlTypes";
+import { BlogPostPageQuery } from "../../types/graphqlTypes"
 
 const useStyles = makeStyles(theme => ({
   heading: {

@@ -1,16 +1,16 @@
-import React from "react";
+import React from "react"
 
-import Button from "@material-ui/core/Button";
-import Grid from "@material-ui/core/Grid";
-import { makeStyles } from "@material-ui/core/styles";
-import { graphql, Link } from "gatsby";
+import Button from "@material-ui/core/Button"
+import Grid from "@material-ui/core/Grid"
+import { makeStyles } from "@material-ui/core/styles"
+import { graphql, Link } from "gatsby"
 
-import DishCard from "../components/dish-card";
-import SEO from "../components/seo";
-import Layout from "../layouts/layout";
-import { H3 } from "../typography";
+import DishCard from "../components/dish-card"
+import SEO from "../components/seo"
+import Layout from "../layouts/layout"
+import { H3 } from "../typography"
 
-import { DishesPageQuery } from "../../types/graphqlTypes";
+import { DishesPageQuery } from "../../types/graphqlTypes"
 
 const useStyles = makeStyles(theme => ({
   heading: {
@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const DishesPage = ({ data }: {data: DishesPageQuery}) => {
+const DishesPage = ({ data }: { data: DishesPageQuery }) => {
   const classes = useStyles({})
   return (
     <Layout>
@@ -57,7 +57,7 @@ export const dishesPageQuery = graphql`
           createdAt(formatString: "MM-DD-YYYY")
           body {
             childMarkdownRemark {
-              rawMarkdownBody
+              html
             }
           }
           image {

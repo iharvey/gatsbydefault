@@ -1,14 +1,14 @@
-import * as React from "react";
+import * as React from "react"
 
-import Container from "@material-ui/core/Container";
-import { graphql, useStaticQuery } from "gatsby";
+import Container from "@material-ui/core/Container"
+import { graphql, useStaticQuery } from "gatsby"
 
-import Footer from "../containers/footer";
-import Header from "../theme/gatsby-theme-material-ui-layout/layout/header";
+import Footer from "../containers/footer"
+import Header from "../theme/gatsby-theme-material-ui-layout/layout/header"
 
-import "./layout.css";
+import "./layout.css"
 
-import { SiteTitleQuery } from "../../types/graphqlTypes";
+import { SiteTitleQuery } from "../../types/graphqlTypes"
 
 interface LayoutProps {
   children: React.ReactNode

@@ -1,9 +1,9 @@
-import React from "react";
+import React from "react"
 
-import { graphql, useStaticQuery } from "gatsby";
-import Helmet, { HelmetProps } from "react-helmet";
+import { graphql, useStaticQuery } from "gatsby"
+import Helmet, { HelmetProps } from "react-helmet"
 
-import { SiteMetaQuery } from "../../types/graphqlTypes";
+import { SiteMetaQuery } from "../../types/graphqlTypes"
 
 interface SEOProps extends HelmetProps {
   lang?: string

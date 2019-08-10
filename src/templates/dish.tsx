@@ -1,17 +1,17 @@
-import React from "react";
+import React from "react"
 
-import Divider from "@material-ui/core/Divider";
-import Grid from "@material-ui/core/Grid";
-import { makeStyles } from "@material-ui/core/styles";
-import { graphql, Link } from "gatsby";
-import Img from "gatsby-image";
+import Divider from "@material-ui/core/Divider"
+import Grid from "@material-ui/core/Grid"
+import { makeStyles } from "@material-ui/core/styles"
+import { graphql, Link } from "gatsby"
+import Img from "gatsby-image"
 
-import Markdown from "../components/markdown";
-import SEO from "../components/seo";
-import Layout from "../layouts/layout";
-import { H3 } from "../typography";
+import Markdown from "../components/markdown"
+import SEO from "../components/seo"
+import Layout from "../layouts/layout"
+import { H3 } from "../typography"
 
-import { DishPageQuery } from "../../types/graphqlTypes";
+import { DishPageQuery } from "../../types/graphqlTypes"
 
 const useStyles = makeStyles(theme => ({
   heading: {
@@ -31,7 +31,6 @@ interface DishTemplateProps {
   data: DishPageQuery
 }
 
-
 const DishTemplate = ({ data }: DishTemplateProps) => {
   const classes = useStyles({})
   const { title, body, image } = data.contentfulDish
@@ -49,7 +48,7 @@ const DishTemplate = ({ data }: DishTemplateProps) => {
           <Grid item xs={12} sm={6}>
             <H3 className={classes.heading}>{title}</H3>
             <Divider className={classes.divider} />
-            <Markdown>{body.childMarkdownRemark.rawMarkdownBody}</Markdown>
+            <Markdown>{body.childMarkdownRemark.html}</Markdown>
           </Grid>
         </Grid>
 
@@ -64,13 +63,13 @@ const DishTemplate = ({ data }: DishTemplateProps) => {
 export default DishTemplate
 
 export const dishPageQuery = graphql`
-  query DishPage ($slug: String!) {
+  query DishPage($slug: String!) {
     contentfulDish(slug: { eq: $slug }) {
       title
       slug
       body {
         childMarkdownRemark {
-          rawMarkdownBody
+          html
         }
       }
       image {

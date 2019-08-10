@@ -1,11 +1,11 @@
-import React from "react";
+import React from "react"
 
-import CssBaseline from "@material-ui/core/CssBaseline";
-import { createGenerateClassName, ThemeProvider } from "@material-ui/styles";
-import { Helmet } from "react-helmet";
-import JssProvider from "react-jss/lib/JssProvider";
+import CssBaseline from "@material-ui/core/CssBaseline"
+import { createGenerateClassName, ThemeProvider } from "@material-ui/styles"
+import { Helmet } from "react-helmet"
+import JssProvider from "react-jss/lib/JssProvider"
 
-import muiTheme from "../../src/theme/gatsby-theme-material-ui/theme";
+import muiTheme from "../../src/theme/gatsby-theme-material-ui/theme"
 
 const generateClassName = createGenerateClassName()
 
