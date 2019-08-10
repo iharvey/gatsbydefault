@@ -37,10 +37,9 @@ interface BlogPostTemplateProps {
   data: BlogPostPageQuery
 }
 
-const BlogPostTemplate:  React.FC<BlogPostTemplateProps> = (props) => {
-  console.warn(props)
+const BlogPostTemplate:  React.FC<BlogPostTemplateProps> = ({data}) => {
 
-  const classes = useStyles()
+  const classes = useStyles({})
   const { title, body, image, tags = [] } = data.contentfulBlogPost
 
   return (

@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
 
 const BlogPostsPage = (props: BlogPostsPageTypes) => {
   const { data } = props
-  const classes = useStyles()
+  const classes = useStyles({})
 
   return (
     <>
@@ -33,7 +33,7 @@ const BlogPostsPage = (props: BlogPostsPageTypes) => {
 
           <List>
             {data.allContentfulBlogPost.edges.map(({ node }) => (
-              <BlogCard key={node.slug} node={node} />
+              <BlogCard key={node.slug} data={node} />
             ))}
           </List>
 

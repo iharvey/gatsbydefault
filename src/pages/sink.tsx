@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const KitchenSink = () => {
-  const classes = useStyles()
+  const classes = useStyles({})
 
   return (
     <Layout>

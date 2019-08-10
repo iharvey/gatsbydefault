@@ -50,7 +50,7 @@ interface HeaderProps {
 
 const Header = (props: HeaderProps): JSX.Element => {
   const { siteTitle } = props
-  const classes = useStyles()
+  const classes = useStyles({})
 
   return (
     <header className={classes.header}>

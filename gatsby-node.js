@@ -67,3 +67,20 @@ exports.createPages = ({ graphql, actions }) => {
       console.log("Error retrieving contentful data", error)
     })
 }
+
+const fluidImageOverride = {
+  base64: { type: "String!" },
+  aspectRatio: { type: "Float!" },
+  src: { type: "String!" },
+  srcSet: { type: "String!" },
+  sizes: { type: "String!" },
+}
+
+exports.createResolvers = ({ createResolvers }) => {
+  const resolvers = {
+    ImageSharpFluid: fluidImageOverride,
+    ContentfulFluid: fluidImageOverride,
+  }
+
+  createResolvers(resolvers)
+}

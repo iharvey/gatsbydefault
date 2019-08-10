@@ -11,7 +11,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const Footer = () => {
-  const classes = useStyles()
+  const classes = useStyles({})
   return (
     <footer>
       <Divider className={classes["MuiDivider--01"]} light />© {new Date().getFullYear()}, Built with

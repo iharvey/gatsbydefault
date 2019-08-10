@@ -12,8 +12,6 @@ import { H3 } from "../typography";
 
 import { DishesPageQuery } from "../../types/graphqlTypes";
 
-
-
 const useStyles = makeStyles(theme => ({
   heading: {
     marginTop: theme.spacing(3),
@@ -30,16 +28,15 @@ export interface DishesPageProps {
   data: DishesPageQuery
 }
 
-const DishesPage = ({data}: DishesPageProps) => {
-
-  const classes = useStyles()
+const DishesPage = ({ data }: DishesPageProps) => {
+  const classes = useStyles({})
   return (
     <Layout>
       <SEO title="Dishes" />
       <H3 className={classes["heading"]}>Dishes</H3>
       <Grid container spacing={2}>
-        {data.allContentfulDish.edges.map(({ node }, index) => (
-          <DishCard key={`dish__${node.slug}`} data={{ node, index }} />
+        {data.allContentfulDish.edges.map(({ node }) => (
+          <DishCard key={`dish__${node.slug}`} data={node} />
         ))}
       </Grid>
 
@@ -61,6 +58,7 @@ export const dishesPageQuery = graphql`
         node {
           title
           slug
+          createdAt(formatString: "MM-DD-YYYY")
           body {
             childMarkdownRemark {
               rawMarkdownBody
@@ -71,7 +69,6 @@ export const dishesPageQuery = graphql`
               ...GatsbyContentfulFluid
             }
           }
-          createdAt(formatString: "MM-DD-YYYY")
         }
       }
     }

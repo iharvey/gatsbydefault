@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Test`,
@@ -15,8 +17,8 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: `tty29peqdsql`,
-        accessToken: `MSGUVY4yMrSsa_zsxzgrfVFizeOJl6V-BpT0CQMBJAQ`,
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_API_ACCESS_TOKEN,
       },
     },
     // {

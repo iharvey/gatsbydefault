@@ -33,7 +33,7 @@ interface DishTemplateProps {
 
 
 const DishTemplate = ({ data }: DishTemplateProps) => {
-  const classes = useStyles()
+  const classes = useStyles({})
   const { title, body, image } = data.contentfulDish
 
   return (

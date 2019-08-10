@@ -323,10 +323,6 @@ export type ContentfulAssetFilterInput = {
   resize?: Maybe<ContentfulResizeFilterInput>,
 };
 
-export type ContentfulAssetFilterListInput = {
-  elemMatch?: Maybe<ContentfulAssetFilterInput>,
-};
-
 export type ContentfulAssetGroupConnection = {
   totalCount: Scalars['Int'],
   edges: Array<ContentfulAssetEdge>,
@@ -1968,14 +1964,14 @@ export type ContentfulFixedFilterInput = {
 };
 
 export type ContentfulFluid = {
-  base64?: Maybe<Scalars['String']>,
+  base64: Scalars['String'],
   tracedSVG?: Maybe<Scalars['String']>,
-  aspectRatio?: Maybe<Scalars['Float']>,
-  src?: Maybe<Scalars['String']>,
-  srcSet?: Maybe<Scalars['String']>,
+  aspectRatio: Scalars['Float'],
+  src: Scalars['String'],
+  srcSet: Scalars['String'],
   srcWebp?: Maybe<Scalars['String']>,
   srcSetWebp?: Maybe<Scalars['String']>,
-  sizes?: Maybe<Scalars['String']>,
+  sizes: Scalars['String'],
 };
 
 export type ContentfulFluidFilterInput = {
@@ -2007,277 +2003,6 @@ export type ContentfulImageFormat =
   'JPG' |
   'PNG' |
   'WEBP';
-
-export type ContentfulMenu = Node & {
-  id: Scalars['ID'],
-  parent?: Maybe<Node>,
-  children: Array<Node>,
-  internal: Internal,
-  date?: Maybe<Scalars['Date']>,
-  image?: Maybe<Array<Maybe<ContentfulAsset>>>,
-  contentful_id?: Maybe<Scalars['String']>,
-  createdAt?: Maybe<Scalars['Date']>,
-  updatedAt?: Maybe<Scalars['Date']>,
-  node_locale?: Maybe<Scalars['String']>,
-};
-
-
-export type ContentfulMenuDateArgs = {
-  formatString?: Maybe<Scalars['String']>,
-  fromNow?: Maybe<Scalars['Boolean']>,
-  difference?: Maybe<Scalars['String']>,
-  locale?: Maybe<Scalars['String']>
-};
-
-
-export type ContentfulMenuCreatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>,
-  fromNow?: Maybe<Scalars['Boolean']>,
-  difference?: Maybe<Scalars['String']>,
-  locale?: Maybe<Scalars['String']>
-};
-
-
-export type ContentfulMenuUpdatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>,
-  fromNow?: Maybe<Scalars['Boolean']>,
-  difference?: Maybe<Scalars['String']>,
-  locale?: Maybe<Scalars['String']>
-};
-
-export type ContentfulMenuConnection = {
-  totalCount: Scalars['Int'],
-  edges: Array<ContentfulMenuEdge>,
-  nodes: Array<ContentfulMenu>,
-  pageInfo: PageInfo,
-  distinct: Array<Scalars['String']>,
-  group: Array<ContentfulMenuGroupConnection>,
-};
-
-
-export type ContentfulMenuConnectionDistinctArgs = {
-  field: ContentfulMenuFieldsEnum
-};
-
-
-export type ContentfulMenuConnectionGroupArgs = {
-  skip?: Maybe<Scalars['Int']>,
-  limit?: Maybe<Scalars['Int']>,
-  field: ContentfulMenuFieldsEnum
-};
-
-export type ContentfulMenuEdge = {
-  next?: Maybe<ContentfulMenu>,
-  node: ContentfulMenu,
-  previous?: Maybe<ContentfulMenu>,
-};
-
-export type ContentfulMenuFieldsEnum = 
-  'id' |
-  'parent___id' |
-  'parent___parent___id' |
-  'parent___parent___parent___id' |
-  'parent___parent___parent___children' |
-  'parent___parent___children' |
-  'parent___parent___children___id' |
-  'parent___parent___children___children' |
-  'parent___parent___internal___content' |
-  'parent___parent___internal___contentDigest' |
-  'parent___parent___internal___description' |
-  'parent___parent___internal___fieldOwners' |
-  'parent___parent___internal___ignoreType' |
-  'parent___parent___internal___mediaType' |
-  'parent___parent___internal___owner' |
-  'parent___parent___internal___type' |
-  'parent___children' |
-  'parent___children___id' |
-  'parent___children___parent___id' |
-  'parent___children___parent___children' |
-  'parent___children___children' |
-  'parent___children___children___id' |
-  'parent___children___children___children' |
-  'parent___children___internal___content' |
-  'parent___children___internal___contentDigest' |
-  'parent___children___internal___description' |
-  'parent___children___internal___fieldOwners' |
-  'parent___children___internal___ignoreType' |
-  'parent___children___internal___mediaType' |
-  'parent___children___internal___owner' |
-  'parent___children___internal___type' |
-  'parent___internal___content' |
-  'parent___internal___contentDigest' |
-  'parent___internal___description' |
-  'parent___internal___fieldOwners' |
-  'parent___internal___ignoreType' |
-  'parent___internal___mediaType' |
-  'parent___internal___owner' |
-  'parent___internal___type' |
-  'children' |
-  'children___id' |
-  'children___parent___id' |
-  'children___parent___parent___id' |
-  'children___parent___parent___children' |
-  'children___parent___children' |
-  'children___parent___children___id' |
-  'children___parent___children___children' |
-  'children___parent___internal___content' |
-  'children___parent___internal___contentDigest' |
-  'children___parent___internal___description' |
-  'children___parent___internal___fieldOwners' |
-  'children___parent___internal___ignoreType' |
-  'children___parent___internal___mediaType' |
-  'children___parent___internal___owner' |
-  'children___parent___internal___type' |
-  'children___children' |
-  'children___children___id' |
-  'children___children___parent___id' |
-  'children___children___parent___children' |
-  'children___children___children' |
-  'children___children___children___id' |
-  'children___children___children___children' |
-  'children___children___internal___content' |
-  'children___children___internal___contentDigest' |
-  'children___children___internal___description' |
-  'children___children___internal___fieldOwners' |
-  'children___children___internal___ignoreType' |
-  'children___children___internal___mediaType' |
-  'children___children___internal___owner' |
-  'children___children___internal___type' |
-  'children___internal___content' |
-  'children___internal___contentDigest' |
-  'children___internal___description' |
-  'children___internal___fieldOwners' |
-  'children___internal___ignoreType' |
-  'children___internal___mediaType' |
-  'children___internal___owner' |
-  'children___internal___type' |
-  'internal___content' |
-  'internal___contentDigest' |
-  'internal___description' |
-  'internal___fieldOwners' |
-  'internal___ignoreType' |
-  'internal___mediaType' |
-  'internal___owner' |
-  'internal___type' |
-  'date' |
-  'image' |
-  'image___id' |
-  'image___parent___id' |
-  'image___parent___parent___id' |
-  'image___parent___parent___children' |
-  'image___parent___children' |
-  'image___parent___children___id' |
-  'image___parent___children___children' |
-  'image___parent___internal___content' |
-  'image___parent___internal___contentDigest' |
-  'image___parent___internal___description' |
-  'image___parent___internal___fieldOwners' |
-  'image___parent___internal___ignoreType' |
-  'image___parent___internal___mediaType' |
-  'image___parent___internal___owner' |
-  'image___parent___internal___type' |
-  'image___children' |
-  'image___children___id' |
-  'image___children___parent___id' |
-  'image___children___parent___children' |
-  'image___children___children' |
-  'image___children___children___id' |
-  'image___children___children___children' |
-  'image___children___internal___content' |
-  'image___children___internal___contentDigest' |
-  'image___children___internal___description' |
-  'image___children___internal___fieldOwners' |
-  'image___children___internal___ignoreType' |
-  'image___children___internal___mediaType' |
-  'image___children___internal___owner' |
-  'image___children___internal___type' |
-  'image___internal___content' |
-  'image___internal___contentDigest' |
-  'image___internal___description' |
-  'image___internal___fieldOwners' |
-  'image___internal___ignoreType' |
-  'image___internal___mediaType' |
-  'image___internal___owner' |
-  'image___internal___type' |
-  'image___contentful_id' |
-  'image___file___url' |
-  'image___file___details___size' |
-  'image___file___fileName' |
-  'image___file___contentType' |
-  'image___title' |
-  'image___description' |
-  'image___node_locale' |
-  'image___fixed___base64' |
-  'image___fixed___tracedSVG' |
-  'image___fixed___aspectRatio' |
-  'image___fixed___width' |
-  'image___fixed___height' |
-  'image___fixed___src' |
-  'image___fixed___srcSet' |
-  'image___fixed___srcWebp' |
-  'image___fixed___srcSetWebp' |
-  'image___resolutions___base64' |
-  'image___resolutions___tracedSVG' |
-  'image___resolutions___aspectRatio' |
-  'image___resolutions___width' |
-  'image___resolutions___height' |
-  'image___resolutions___src' |
-  'image___resolutions___srcSet' |
-  'image___resolutions___srcWebp' |
-  'image___resolutions___srcSetWebp' |
-  'image___fluid___base64' |
-  'image___fluid___tracedSVG' |
-  'image___fluid___aspectRatio' |
-  'image___fluid___src' |
-  'image___fluid___srcSet' |
-  'image___fluid___srcWebp' |
-  'image___fluid___srcSetWebp' |
-  'image___fluid___sizes' |
-  'image___sizes___base64' |
-  'image___sizes___tracedSVG' |
-  'image___sizes___aspectRatio' |
-  'image___sizes___src' |
-  'image___sizes___srcSet' |
-  'image___sizes___srcWebp' |
-  'image___sizes___srcSetWebp' |
-  'image___sizes___sizes' |
-  'image___resize___base64' |
-  'image___resize___tracedSVG' |
-  'image___resize___src' |
-  'image___resize___width' |
-  'image___resize___height' |
-  'image___resize___aspectRatio' |
-  'contentful_id' |
-  'createdAt' |
-  'updatedAt' |
-  'node_locale';
-
-export type ContentfulMenuFilterInput = {
-  id?: Maybe<StringQueryOperatorInput>,
-  parent?: Maybe<NodeFilterInput>,
-  children?: Maybe<NodeFilterListInput>,
-  internal?: Maybe<InternalFilterInput>,
-  date?: Maybe<DateQueryOperatorInput>,
-  image?: Maybe<ContentfulAssetFilterListInput>,
-  contentful_id?: Maybe<StringQueryOperatorInput>,
-  createdAt?: Maybe<DateQueryOperatorInput>,
-  updatedAt?: Maybe<DateQueryOperatorInput>,
-  node_locale?: Maybe<StringQueryOperatorInput>,
-};
-
-export type ContentfulMenuGroupConnection = {
-  totalCount: Scalars['Int'],
-  edges: Array<ContentfulMenuEdge>,
-  nodes: Array<ContentfulMenu>,
-  pageInfo: PageInfo,
-  field: Scalars['String'],
-  fieldValue?: Maybe<Scalars['String']>,
-};
-
-export type ContentfulMenuSortInput = {
-  fields?: Maybe<Array<Maybe<ContentfulMenuFieldsEnum>>>,
-  order?: Maybe<Array<Maybe<SortOrderEnum>>>,
-};
 
 export type ContentfulResize = {
   base64?: Maybe<Scalars['String']>,
@@ -3438,14 +3163,14 @@ export type ImageSharpFixedFilterInput = {
 };
 
 export type ImageSharpFluid = {
-  base64?: Maybe<Scalars['String']>,
+  base64: Scalars['String'],
   tracedSVG?: Maybe<Scalars['String']>,
-  aspectRatio?: Maybe<Scalars['Float']>,
-  src?: Maybe<Scalars['String']>,
-  srcSet?: Maybe<Scalars['String']>,
+  aspectRatio: Scalars['Float'],
+  src: Scalars['String'],
+  srcSet: Scalars['String'],
   srcWebp?: Maybe<Scalars['String']>,
   srcSetWebp?: Maybe<Scalars['String']>,
-  sizes?: Maybe<Scalars['String']>,
+  sizes: Scalars['String'],
   originalImg?: Maybe<Scalars['String']>,
   originalName?: Maybe<Scalars['String']>,
   presentationWidth?: Maybe<Scalars['Int']>,
@@ -3909,35 +3634,33 @@ export type PotraceTurnPolicy =
 
 export type Query = {
   file?: Maybe<File>,
-  allFile?: Maybe<FileConnection>,
+  allFile: FileConnection,
   imageSharp?: Maybe<ImageSharp>,
-  allImageSharp?: Maybe<ImageSharpConnection>,
+  allImageSharp: ImageSharpConnection,
   markdownRemark?: Maybe<MarkdownRemark>,
-  allMarkdownRemark?: Maybe<MarkdownRemarkConnection>,
+  allMarkdownRemark: MarkdownRemarkConnection,
   sitePage?: Maybe<SitePage>,
-  allSitePage?: Maybe<SitePageConnection>,
+  allSitePage: SitePageConnection,
   sitePlugin?: Maybe<SitePlugin>,
-  allSitePlugin?: Maybe<SitePluginConnection>,
+  allSitePlugin: SitePluginConnection,
   site?: Maybe<Site>,
-  allSite?: Maybe<SiteConnection>,
+  allSite: SiteConnection,
   directory?: Maybe<Directory>,
-  allDirectory?: Maybe<DirectoryConnection>,
+  allDirectory: DirectoryConnection,
   contentfulContentType?: Maybe<ContentfulContentType>,
-  allContentfulContentType?: Maybe<ContentfulContentTypeConnection>,
+  allContentfulContentType: ContentfulContentTypeConnection,
   contentfulBlogPost?: Maybe<ContentfulBlogPost>,
-  allContentfulBlogPost?: Maybe<ContentfulBlogPostConnection>,
+  allContentfulBlogPost: ContentfulBlogPostConnection,
   contentfulBlogPostBodyTextNode?: Maybe<ContentfulBlogPostBodyTextNode>,
-  allContentfulBlogPostBodyTextNode?: Maybe<ContentfulBlogPostBodyTextNodeConnection>,
+  allContentfulBlogPostBodyTextNode: ContentfulBlogPostBodyTextNodeConnection,
   contentfulDish?: Maybe<ContentfulDish>,
-  allContentfulDish?: Maybe<ContentfulDishConnection>,
+  allContentfulDish: ContentfulDishConnection,
   contentfulDishBodyTextNode?: Maybe<ContentfulDishBodyTextNode>,
-  allContentfulDishBodyTextNode?: Maybe<ContentfulDishBodyTextNodeConnection>,
+  allContentfulDishBodyTextNode: ContentfulDishBodyTextNodeConnection,
   contentfulDishPricesJsonNode?: Maybe<ContentfulDishPricesJsonNode>,
-  allContentfulDishPricesJsonNode?: Maybe<ContentfulDishPricesJsonNodeConnection>,
-  contentfulMenu?: Maybe<ContentfulMenu>,
-  allContentfulMenu?: Maybe<ContentfulMenuConnection>,
+  allContentfulDishPricesJsonNode: ContentfulDishPricesJsonNodeConnection,
   contentfulAsset?: Maybe<ContentfulAsset>,
-  allContentfulAsset?: Maybe<ContentfulAssetConnection>,
+  allContentfulAsset: ContentfulAssetConnection,
 };
 
 
@@ -4284,28 +4007,6 @@ export type QueryContentfulDishPricesJsonNodeArgs = {
 export type QueryAllContentfulDishPricesJsonNodeArgs = {
   filter?: Maybe<ContentfulDishPricesJsonNodeFilterInput>,
   sort?: Maybe<ContentfulDishPricesJsonNodeSortInput>,
-  skip?: Maybe<Scalars['Int']>,
-  limit?: Maybe<Scalars['Int']>
-};
-
-
-export type QueryContentfulMenuArgs = {
-  id?: Maybe<StringQueryOperatorInput>,
-  parent?: Maybe<NodeFilterInput>,
-  children?: Maybe<NodeFilterListInput>,
-  internal?: Maybe<InternalFilterInput>,
-  date?: Maybe<DateQueryOperatorInput>,
-  image?: Maybe<ContentfulAssetFilterListInput>,
-  contentful_id?: Maybe<StringQueryOperatorInput>,
-  createdAt?: Maybe<DateQueryOperatorInput>,
-  updatedAt?: Maybe<DateQueryOperatorInput>,
-  node_locale?: Maybe<StringQueryOperatorInput>
-};
-
-
-export type QueryAllContentfulMenuArgs = {
-  filter?: Maybe<ContentfulMenuFilterInput>,
-  sort?: Maybe<ContentfulMenuSortInput>,
   skip?: Maybe<Scalars['Int']>,
   limit?: Maybe<Scalars['Int']>
 };
@@ -5125,6 +4826,16 @@ export type SiteTitleQueryVariables = {};
 
 export type SiteTitleQuery = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
+export type BlogPostsPageQueryVariables = {};
+
+
+export type BlogPostsPageQuery = { allContentfulBlogPost: { edges: Array<{ node: (Pick<ContentfulBlogPost, 'title' | 'slug' | 'createdAt'> & { body: Maybe<{ childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'excerpt'>> }>, image: Maybe<{ fluid: Maybe<GatsbyContentfulFluidFragment> }> }) }> } };
+
+export type DishesPageQueryVariables = {};
+
+
+export type DishesPageQuery = { allContentfulDish: { edges: Array<{ node: (Pick<ContentfulDish, 'title' | 'slug' | 'createdAt'> & { body: Maybe<{ childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'rawMarkdownBody'>> }>, image: Maybe<{ fluid: Maybe<GatsbyContentfulFluidFragment> }> }) }> } };
+
 export type BlogPostPageQueryVariables = {
   slug: Scalars['String']
 };
@@ -5138,16 +4849,6 @@ export type DishPageQueryVariables = {
 
 
 export type DishPageQuery = { contentfulDish: Maybe<(Pick<ContentfulDish, 'title' | 'slug'> & { body: Maybe<{ childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'rawMarkdownBody'>> }>, image: Maybe<{ fluid: Maybe<GatsbyContentfulFluidFragment> }> })> };
-
-export type BlogPostsPageQueryVariables = {};
-
-
-export type BlogPostsPageQuery = { allContentfulBlogPost: Maybe<{ edges: Array<{ node: (Pick<ContentfulBlogPost, 'title' | 'slug' | 'createdAt'> & { body: Maybe<{ childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'excerpt'>> }>, image: Maybe<{ fluid: Maybe<GatsbyContentfulFluidFragment> }> }) }> }> };
-
-export type DishesPageQueryVariables = {};
-
-
-export type DishesPageQuery = { allContentfulDish: Maybe<{ edges: Array<{ node: (Pick<ContentfulDish, 'title' | 'slug' | 'createdAt'> & { body: Maybe<{ childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'rawMarkdownBody'>> }>, image: Maybe<{ fluid: Maybe<GatsbyContentfulFluidFragment> }> }) }> }> };
 
 export type GatsbyContentfulFixedFragment = Pick<ContentfulFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 

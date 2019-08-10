@@ -11,8 +11,6 @@ import { Body1 } from "../typography";
 
 import { ContentfulDish } from "../../types/graphqlTypes";
 
-// import { FluidImgType } from "../types";
-
 const useStyles = makeStyles(theme => ({
   "MuiEngagementCard--01": {
     transition: "0.3s",
@@ -42,34 +40,18 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-// data: {
-//   node: {
-//     slug: string
-//     title: string
-//     image: {
-//       fluid: FluidImgType
-//     }
-//   }
-//   index: number
-// }
+type DishCardType = Pick<ContentfulDish, "slug" | "image" | "title">
 
-interface DishCardType {
-  node: Pick<ContentfulDish, 'slug' | 'image' | 'title'>
-  index: number
-}
-
-
-const DishCard = ({ data }: {data: DishCardType}) => {
-  const { node } = data
-  const classes = useStyles()
+const DishCard = ({ data }: { data: DishCardType }) => {
+  const classes = useStyles({})
 
   return (
-    <Grid key={`grid__${node.slug}`} item xs={6} sm={4} md={3}>
-      <Link to={`/dishes/${node.slug}`}>
-        <Card className={classes["MuiEngagementCard--01"]} key={`card__${node.slug}`}>
-          {node.image ? <Img fluid={node.image.fluid} alt={node.title} className={classes.dishImage} /> : null}
+    <Grid key={`grid__${data.slug}`} item xs={6} sm={4} md={3}>
+      <Link to={`/dishes/${data.slug}`}>
+        <Card className={classes["MuiEngagementCard--01"]} key={`card__${data.slug}`}>
+          {data.image ? <Img fluid={data.image.fluid} alt={data.title} className={classes.dishImage} /> : null}
           <CardContent>
-            <Body1>{node.title}</Body1>
+            <Body1>{data.title}</Body1>
           </CardContent>
         </Card>
       </Link>

@@ -20,25 +20,21 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-interface BlogCard {
-  node: BlogPostNodeShort
-}
 
-const BlogCard = (props: BlogCard) => {
-  const classes = useStyles()
-  const { node } = props
+const BlogCard = ({ data }: { data: BlogPostNodeShort }) => {
+  const classes = useStyles({})
 
   return (
-    <Link to={`/blogpost/${node.slug}`}>
+    <Link to={`/blogpost/${data.slug}`}>
       <ListItem disableGutters>
         <Grid container spacing={0} className={classes.gridItem}>
           <Grid item xs={3}>
             <div style={{ marginRight: "1rem" }}>
-              {node.image ? <Img fluid={node.image.fluid} alt={node.title} /> : <ImageIcon />}
+              {data.image ? <Img fluid={data.image.fluid} alt={data.title} /> : <ImageIcon />}
             </div>
           </Grid>
           <Grid item xs={9}>
-            <ListItemText primary={node.title} secondary={node.body.childMarkdownRemark.excerpt} />
+            <ListItemText primary={data.title} secondary={data.body.childMarkdownRemark.excerpt} />
           </Grid>
         </Grid>
       </ListItem>
