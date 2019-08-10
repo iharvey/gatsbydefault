@@ -31,12 +31,25 @@ module.exports = {
     //     },
     //   },
     // },
+
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-top-layout`,
     `gatsby-transformer-remark`,
-    `gatsby-plugin-typescript`,
+    // `gatsby-plugin-typescript`,
+    {
+      resolve: `gatsby-plugin-ts`,
+      options: {
+        tsLoader: {
+          logLevel: 'warn',
+        },
+        fileName: `types/graphqlTypes.ts`,
+        codegen: true,
+        codegenDelay: 250,
+        alwaysCheck: false,
+      }
+    },
     {
       resolve: `gatsby-plugin-material-ui`,
       options: {

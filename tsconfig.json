@@ -1,20 +1,22 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "ESNext" /* or at least ES2015 */,
+    "module": "ESNext" /* or at least ES2015 */,
+    // "lib": ["dom"],             /* <-- required! */
     "lib": ["dom", "dom.iterable", "esnext"],
+    "jsx": "preserve" /* <-- required! */,
+    "moduleResolution": "node" /* <-- required! */,
+
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
-    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "preserve",
-    "strictNullChecks": true
+    "strictNullChecks": false
   },
   "include": ["src"],
   "exclude": ["node_modules", "public", "coverage", ".cache", ".vscode"]

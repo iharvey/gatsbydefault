@@ -3,22 +3,16 @@ import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 
-import { ChildImageSharp } from "../types";
-
-// import { GatsbyImageSharpFluid } from "../fragments"
+import { HeroImageQuery } from "../../types/graphqlTypes";
 
 interface HeroData {
-  heroImage: {
-    childImageSharp: ChildImageSharp
-  }
+  data: HeroImageQuery
 }
 
 const Hero: React.SFC = () => {
 
-
-
-  const data: HeroData = useStaticQuery(graphql`
-    query {
+  const { data }: HeroData = useStaticQuery(graphql`
+    query HeroImage {
       heroImage: file(relativePath: { eq: "alexandr-podvalny-WOxddhzhC1w-unsplash.jpg" }) {
         childImageSharp {
           fluid {
@@ -29,9 +23,12 @@ const Hero: React.SFC = () => {
     }
   `)
 
-    console.warn({data})
+  const fluidData = data.heroImage.childImageSharp.fluid
+    // (data && data.heroImage && data.heroImage.childImageSharp && data.heroImage.childImageSharp.fluid)
 
-  return <Img fluid={data.heroImage.childImageSharp.fluid} />
+  return (
+    fluidData ? <Img fluid={fluidData} /> : null
+  )
 }
 
 export default Hero

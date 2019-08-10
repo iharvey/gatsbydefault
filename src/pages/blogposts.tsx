@@ -6,8 +6,8 @@ import List from "@material-ui/core/List";
 import { makeStyles } from "@material-ui/core/styles";
 import { graphql, Link } from "gatsby";
 
-import SEO from "../components/seo";
 import BlogCard from "../components/blog-card";
+import SEO from "../components/seo";
 import Layout from "../layouts/layout";
 import { H3 } from "../typography";
 
@@ -62,8 +62,8 @@ interface BlogPostsPageTypes {
   }
 }
 
-export const postQuery = graphql`
-  query postQuery {
+export const blogPostsPageQuery = graphql`
+  query BlogPostsPage {
     allContentfulBlogPost {
       edges {
         node {

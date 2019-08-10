@@ -1,14 +1,14 @@
+import React from "react";
+
+import { graphql, useStaticQuery } from "gatsby";
+import Helmet, { HelmetProps } from "react-helmet";
+
 /**
  * SEO component that queries for data with
  *  Gatsby's useStaticQuery React hook
  *
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
-import React from "react";
-
-import { graphql, useStaticQuery } from "gatsby";
-import Helmet, { HelmetProps } from "react-helmet";
-
 
 interface SEOProps extends HelmetProps {
   lang?: string
@@ -21,7 +21,7 @@ function SEO(props: SEOProps) {
 
   const { site } = useStaticQuery(
     graphql`
-      query {
+      query SiteMeta {
         site {
           siteMetadata {
             title

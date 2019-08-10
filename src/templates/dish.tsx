@@ -6,12 +6,12 @@ import { makeStyles } from "@material-ui/core/styles";
 import { graphql, Link } from "gatsby";
 import Img from "gatsby-image";
 
-import Markdown from "../components/Markdown";
+import Markdown from "../components/markdown";
 import SEO from "../components/seo";
 import Layout from "../layouts/layout";
 import { H3 } from "../typography";
 
-import { FluidImgType } from "../types";
+import { DishPageQuery } from "../../types/graphqlTypes";
 
 const useStyles = makeStyles(theme => ({
   heading: {
@@ -26,6 +26,11 @@ const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(1),
   },
 }))
+
+interface DishTemplateProps {
+  data: DishPageQuery
+}
+
 
 const DishTemplate = ({ data }: DishTemplateProps) => {
   const classes = useStyles()
@@ -58,25 +63,8 @@ const DishTemplate = ({ data }: DishTemplateProps) => {
 
 export default DishTemplate
 
-interface DishTemplateProps {
-  data: {
-    contentfulDish: {
-      title: string
-      slug: string
-      body: {
-        childMarkdownRemark: {
-          rawMarkdownBody: string
-        }
-      }
-      image: {
-        fluid: FluidImgType
-      }
-    }
-  }
-}
-
-export const pageQuery = graphql`
-  query($slug: String!) {
+export const dishPageQuery = graphql`
+  query DishPage ($slug: String!) {
     contentfulDish(slug: { eq: $slug }) {
       title
       slug

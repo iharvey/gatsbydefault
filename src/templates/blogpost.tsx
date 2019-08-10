@@ -7,12 +7,12 @@ import { makeStyles } from "@material-ui/core/styles";
 import { graphql, Link } from "gatsby";
 import Img from "gatsby-image";
 
-import Markdown from "../components/Markdown";
+import Markdown from "../components/markdown";
 import SEO from "../components/seo";
 import Layout from "../layouts/layout";
 import { H3 } from "../typography";
 
-import { FluidImgType } from "../types";
+import { BlogPostPageQuery } from "../../types/graphqlTypes";
 
 const useStyles = makeStyles(theme => ({
   heading: {
@@ -33,7 +33,13 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const BlogPostTemplate = ({ data }: BlogPostTemplateProps) => {
+interface BlogPostTemplateProps {
+  data: BlogPostPageQuery
+}
+
+const BlogPostTemplate:  React.FC<BlogPostTemplateProps> = (props) => {
+  console.warn(props)
+
   const classes = useStyles()
   const { title, body, image, tags = [] } = data.contentfulBlogPost
 
@@ -63,24 +69,8 @@ const BlogPostTemplate = ({ data }: BlogPostTemplateProps) => {
 
 export default BlogPostTemplate
 
-interface BlogPostTemplateProps {
-  data: {
-    contentfulBlogPost: {
-      title: string
-      slug: string
-      body: {
-        body: string
-      }
-      image: {
-        fluid: FluidImgType
-      }
-      tags: string[]
-    }
-  }
-}
-
-export const pageQuery = graphql`
-  query pageQuery($slug: String!) {
+export const blogPostPageQuery = graphql`
+  query BlogPostPage($slug: String!) {
     contentfulBlogPost(slug: { eq: $slug }) {
       title
       slug

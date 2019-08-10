@@ -9,7 +9,9 @@ import Img from "gatsby-image";
 
 import { Body1 } from "../typography";
 
-import { FluidImgType } from "../types";
+import { ContentfulDish } from "../../types/graphqlTypes";
+
+// import { FluidImgType } from "../types";
 
 const useStyles = makeStyles(theme => ({
   "MuiEngagementCard--01": {
@@ -40,21 +42,25 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
+// data: {
+//   node: {
+//     slug: string
+//     title: string
+//     image: {
+//       fluid: FluidImgType
+//     }
+//   }
+//   index: number
+// }
+
 interface DishCardType {
-  data: {
-    node: {
-      slug: string
-      title: string
-      image: {
-        fluid: FluidImgType
-      }
-    }
-    index: number
-  }
+  node: Pick<ContentfulDish, 'slug' | 'image' | 'title'>
+  index: number
 }
 
-const DishCard = (props: DishCardType) => {
-  const { node } = props.data
+
+const DishCard = ({ data }: {data: DishCardType}) => {
+  const { node } = data
   const classes = useStyles()
 
   return (

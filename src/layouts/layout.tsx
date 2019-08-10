@@ -21,7 +21,7 @@ interface LayoutData {
 
 const Layout: React.SFC<LayoutProps> = ({ children }) => {
   const { site }: LayoutData = useStaticQuery(graphql`
-    query SiteTitleQuery {
+    query SiteTitle {
       site {
         siteMetadata {
           title

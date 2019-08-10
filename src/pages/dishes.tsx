@@ -5,18 +5,14 @@ import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import { graphql, Link } from "gatsby";
 
-import SEO from "../components/seo";
 import DishCard from "../components/dish-card";
+import SEO from "../components/seo";
 import Layout from "../layouts/layout";
 import { H3 } from "../typography";
 
-import { FluidImgType } from "../types";
+import { DishesPageQuery } from "../../types/graphqlTypes";
 
-// import PropTypes from "prop-types"
-// import Card from "@material-ui/core/Card"
-// import CardContent from "@material-ui/core/CardContent"
-// import { Body1 } from "../components/typo"
-// import Img from "gatsby-image"
+
 
 const useStyles = makeStyles(theme => ({
   heading: {
@@ -31,25 +27,10 @@ const useStyles = makeStyles(theme => ({
 }))
 
 export interface DishesPageProps {
-  data: {
-    allContentfulDish: {
-      edges: [
-        {
-          node: {
-            slug: string
-            title: string
-            image: {
-              fluid: FluidImgType
-            }
-          }
-        }
-      ]
-    }
-  }
+  data: DishesPageQuery
 }
 
-const DishesPage = (props: DishesPageProps) => {
-  const { data } = props
+const DishesPage = ({data}: DishesPageProps) => {
 
   const classes = useStyles()
   return (
@@ -73,8 +54,8 @@ const DishesPage = (props: DishesPageProps) => {
 
 export default DishesPage
 
-export const dishQuery = graphql`
-  query dishQuery {
+export const dishesPageQuery = graphql`
+  query DishesPage {
     allContentfulDish {
       edges {
         node {
