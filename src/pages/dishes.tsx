@@ -24,11 +24,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-export interface DishesPageProps {
-  data: DishesPageQuery
-}
-
-const DishesPage = ({ data }: DishesPageProps) => {
+const DishesPage = ({ data }: {data: DishesPageQuery}) => {
   const classes = useStyles({})
   return (
     <Layout>

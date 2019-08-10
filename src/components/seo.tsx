@@ -3,12 +3,7 @@ import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import Helmet, { HelmetProps } from "react-helmet";
 
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
+import { SiteMetaQuery } from "../../types/graphqlTypes";
 
 interface SEOProps extends HelmetProps {
   lang?: string
@@ -19,7 +14,7 @@ interface SEOProps extends HelmetProps {
 function SEO(props: SEOProps) {
   const { description = "", lang = "en", meta = [], title, image = null } = props
 
-  const { site } = useStaticQuery(
+  const { site }: SiteMetaQuery = useStaticQuery(
     graphql`
       query SiteMeta {
         site {

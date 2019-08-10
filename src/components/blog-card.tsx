@@ -8,7 +8,7 @@ import ImageIcon from "@material-ui/icons/Image";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
 
-import { BlogPostNodeShort } from "../types";
+import { ContentfulBlogPost } from "../../types/graphqlTypes";
 
 const useStyles = makeStyles(theme => ({
   gridItem: {
@@ -20,8 +20,9 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
+type BlogCardType = Pick<ContentfulBlogPost, "title" | "slug" | "createdAt" | "body" | "image">
 
-const BlogCard = ({ data }: { data: BlogPostNodeShort }) => {
+const BlogCard = ({ data }: { data: BlogCardType }) => {
   const classes = useStyles({})
 
   return (

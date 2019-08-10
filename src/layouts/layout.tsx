@@ -8,19 +8,14 @@ import Header from "../theme/gatsby-theme-material-ui-layout/layout/header";
 
 import "./layout.css";
 
+import { SiteTitleQuery } from "../../types/graphqlTypes";
+
 interface LayoutProps {
   children: React.ReactNode
 }
-interface LayoutData {
-  site: {
-    siteMetadata: {
-      title: string
-    }
-  }
-}
 
 const Layout: React.SFC<LayoutProps> = ({ children }) => {
-  const { site }: LayoutData = useStaticQuery(graphql`
+  const { site }: SiteTitleQuery = useStaticQuery(graphql`
     query SiteTitle {
       site {
         siteMetadata {

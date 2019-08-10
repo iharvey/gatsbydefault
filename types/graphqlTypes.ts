@@ -4826,10 +4826,10 @@ export type SiteTitleQueryVariables = {};
 
 export type SiteTitleQuery = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
-export type BlogPostsPageQueryVariables = {};
+export type AllBlogPostsPageQueryVariables = {};
 
 
-export type BlogPostsPageQuery = { allContentfulBlogPost: { edges: Array<{ node: (Pick<ContentfulBlogPost, 'title' | 'slug' | 'createdAt'> & { body: Maybe<{ childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'excerpt'>> }>, image: Maybe<{ fluid: Maybe<GatsbyContentfulFluidFragment> }> }) }> } };
+export type AllBlogPostsPageQuery = { allContentfulBlogPost: { edges: Array<{ node: (Pick<ContentfulBlogPost, 'title' | 'slug' | 'createdAt'> & { body: Maybe<{ childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'excerpt'>> }>, image: Maybe<{ fluid: Maybe<GatsbyContentfulFluidFragment> }> }) }> } };
 
 export type DishesPageQueryVariables = {};
 

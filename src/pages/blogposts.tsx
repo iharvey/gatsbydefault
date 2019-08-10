@@ -11,7 +11,7 @@ import SEO from "../components/seo";
 import Layout from "../layouts/layout";
 import { H3 } from "../typography";
 
-import { BlogPostNodeShort } from "../types";
+import { AllBlogPostsPageQuery } from "../../types/graphqlTypes";
 
 const useStyles = makeStyles(theme => ({
   heading: {
@@ -20,8 +20,8 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const BlogPostsPage = (props: BlogPostsPageTypes) => {
-  const { data } = props
+
+const BlogPostsPage = ({ data }: { data: AllBlogPostsPageQuery }) => {
   const classes = useStyles({})
 
   return (
@@ -50,20 +50,8 @@ const BlogPostsPage = (props: BlogPostsPageTypes) => {
 
 export default BlogPostsPage
 
-interface BlogPostsPageTypes {
-  data: {
-    allContentfulBlogPost: {
-      edges: [
-        {
-          node: BlogPostNodeShort
-        }
-      ]
-    }
-  }
-}
-
 export const blogPostsPageQuery = graphql`
-  query BlogPostsPage {
+  query AllBlogPostsPage {
     allContentfulBlogPost {
       edges {
         node {
