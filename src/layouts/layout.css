@@ -1,11 +1,12 @@
-.MuiBlockquote {
+/* .MuiBlockquote {
   border: 5px solid #bbbbbb;
   position: relative;
   font-style: italic;
   padding-bottom: 1px;
 }
 
-.MuiBlockquote::before, .MuiBlockquote::after {
+.MuiBlockquote::before,
+.MuiBlockquote::after {
   top: -5px;
   left: 50%;
   width: 94%;
@@ -19,4 +20,12 @@
 .MuiBlockquote::after {
   top: auto;
   bottom: -5px;
+} */
+
+:any-link {
+  text-decoration: none;
+}
+
+.markdown__output :any-link {
+  text-decoration: underline;
 }

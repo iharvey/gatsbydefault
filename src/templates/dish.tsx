@@ -27,11 +27,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-interface DishTemplateProps {
-  data: DishPageQuery
-}
-
-const DishTemplate = ({ data }: DishTemplateProps) => {
+const DishTemplate = ({ data }: { data: DishPageQuery }) => {
   const classes = useStyles({})
   const { title, body, image } = data.contentfulDish
 
@@ -39,7 +35,7 @@ const DishTemplate = ({ data }: DishTemplateProps) => {
     <Layout>
       <SEO image={image ? image.fluid.src : null} title={title} />
 
-      <div className="blogpost">
+      <div className="page__content--dish">
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6}>
             {image ? <Img fluid={image.fluid} alt={title} /> : null}
@@ -73,7 +69,7 @@ export const dishPageQuery = graphql`
         }
       }
       image {
-        fluid(maxWidth: 400) {
+        fluid(maxWidth: 600, sizes: "(min-width: 600px) 50vw, (min-width: 1280px) 600px, 90vw") {
           ...GatsbyContentfulFluid
         }
       }

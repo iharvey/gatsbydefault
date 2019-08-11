@@ -3,7 +3,7 @@ import * as React from "react"
 import Typography, { TypographyProps } from "@material-ui/core/Typography"
 
 interface TypoProps extends TypographyProps {
-  children: JSX.Element | string
+  children: string
   className?: string
 }
 
@@ -17,7 +17,7 @@ const typeMaker = (props: TypoProps): JSX.Element => {
 }
 
 interface TypeElementProps {
-  children: JSX.Element | string
+  children: string
   className?: string
 }
 

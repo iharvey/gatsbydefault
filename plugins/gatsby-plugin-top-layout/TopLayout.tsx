@@ -9,15 +9,18 @@ import muiTheme from "../../src/theme/gatsby-theme-material-ui/theme"
 
 const generateClassName = createGenerateClassName()
 
+const fontStrFG = "Quattrocento+Sans:400,700|Work+Sans"
+const fontStrHN = "Halant:500|Nunito+Sans:300"
+const fontStrLR = "Lora:700|Roboto:300"
+
+const fontStr = fontStrHN
+
 export default function TopLayout(props) {
   return (
     <>
       <Helmet>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no" />
-        <link
-          href="https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,700|Work+Sans&display=swap"
-          rel="stylesheet"
-        ></link>
+        <link href={`https://fonts.googleapis.com/css?family=${fontStr}&display=swap`} rel="stylesheet"></link>
       </Helmet>
 
       <JssProvider generateClassName={generateClassName}>

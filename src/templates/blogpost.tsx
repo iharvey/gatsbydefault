@@ -53,7 +53,7 @@ const BlogPostTemplate:  React.FC<BlogPostTemplateProps> = ({data}) => {
             {tags && tags.map(tag => <Chip className={classes.chip} size="small" label={tag} key={`tag__${tag}`} />)}
           </div>
           <Divider className={classes.divider} />
-          <div>
+          <div className="markdown__output">
             <Markdown>{body.body}</Markdown>
           </div>
 
