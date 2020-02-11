@@ -1,7 +1,6 @@
-import React from "react"
-
 import Divider from "@material-ui/core/Divider"
 import { makeStyles } from "@material-ui/core/styles"
+import React from "react"
 
 const useStyles = makeStyles(theme => ({
   "MuiDivider--01": {
@@ -14,7 +13,7 @@ const Footer = () => {
   const classes = useStyles({})
   return (
     <footer>
-      <Divider className={classes["MuiDivider--01"]} light />© {new Date().getFullYear()}, Built with
+      <Divider className={classes["MuiDivider--01"]} light />© 2020, Built with
       {` `}
       <a href="https://www.gatsbyjs.org">Gatsby</a>
     </footer>

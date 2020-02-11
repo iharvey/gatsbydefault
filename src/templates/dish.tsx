@@ -1,17 +1,15 @@
-import React from "react"
-
 import Divider from "@material-ui/core/Divider"
 import Grid from "@material-ui/core/Grid"
 import { makeStyles } from "@material-ui/core/styles"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
-
-import Markdown from "../components/markdown"
-import SEO from "../components/seo"
-import Layout from "../layouts/layout"
-import { H3 } from "../typography"
+import React from "react"
 
 import { DishPageQuery } from "../../types/graphqlTypes"
+import SEO from "../components/seo"
+import Layout from "../layouts/layout"
+import { H3 } from "../typesetting"
+import Markdown from "../typesetting/markdown"
 
 const useStyles = makeStyles(theme => ({
   heading: {
@@ -27,24 +25,25 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const DishTemplate = ({ data }: { data: DishPageQuery }) => {
-  const classes = useStyles({})
-  const { title, body, image } = data.contentfulDish
+const DishTemplate: React.FC<{ data: DishPageQuery }> = ({ data }) => {
+  const classes = useStyles()
+  const { dish } = data
+  const { rawMarkdownBody } = dish.body.childMarkdownRemark
 
   return (
     <Layout>
-      <SEO image={image ? image.fluid.src : null} title={title} />
+      <SEO image={dish.image ? dish.image.fluid.src : null} title={dish.title} />
 
       <div className="page__content--dish">
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6}>
-            {image ? <Img fluid={image.fluid} alt={title} /> : null}
+            {dish.image ? <Img fluid={dish.image.fluid} alt={dish.title} /> : null}
           </Grid>
 
           <Grid item xs={12} sm={6}>
-            <H3 className={classes.heading}>{title}</H3>
+            <H3 className={classes.heading}>{dish.title}</H3>
             <Divider className={classes.divider} />
-            <Markdown>{body.childMarkdownRemark.html}</Markdown>
+            <Markdown>{rawMarkdownBody}</Markdown>
           </Grid>
         </Grid>
 
@@ -60,12 +59,12 @@ export default DishTemplate
 
 export const dishPageQuery = graphql`
   query DishPage($slug: String!) {
-    contentfulDish(slug: { eq: $slug }) {
+    dish: contentfulDish(slug: { eq: $slug }) {
       title
       slug
       body {
         childMarkdownRemark {
-          html
+          rawMarkdownBody
         }
       }
       image {

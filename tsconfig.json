@@ -2,11 +2,9 @@
   "compilerOptions": {
     "target": "ESNext" /* or at least ES2015 */,
     "module": "ESNext" /* or at least ES2015 */,
-    // "lib": ["dom"],             /* <-- required! */
     "lib": ["dom", "dom.iterable", "esnext"],
     "jsx": "preserve" /* <-- required! */,
     "moduleResolution": "node" /* <-- required! */,
-
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,

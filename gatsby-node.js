@@ -7,21 +7,12 @@
 const path = require(`path`)
 const slash = require(`slash`)
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
-  // we use the provided allContentfulBlogPost query to fetch the data from Contentful
   return graphql(
     `
       {
-        allContentfulBlogPost {
-          edges {
-            node {
-              id
-              slug
-            }
-          }
-        }
         allContentfulDish {
           edges {
             node {
@@ -35,23 +26,10 @@ exports.createPages = ({ graphql, actions }) => {
   )
     .then(result => {
       if (result.errors) {
-        console.log("Error retrieving contentful data", result.errors)
+        reporter.panicOnBuild(`Error while running GraphQL query.`)
       }
-      // Resolve the paths to our template
-      const blogPostTemplate = path.resolve("./src/templates/blogpost.tsx")
-      const dishTemplate = path.resolve("./src/templates/dish.tsx")
 
-      // Then for each result we create a page.
-      result.data.allContentfulBlogPost.edges.forEach(edge => {
-        createPage({
-          path: `/blogpost/${edge.node.slug}/`,
-          component: slash(blogPostTemplate),
-          context: {
-            slug: edge.node.slug,
-            id: edge.node.id,
-          },
-        })
-      })
+      const dishTemplate = path.resolve("./src/templates/dish.tsx")
       result.data.allContentfulDish.edges.forEach(edge => {
         createPage({
           path: `/dishes/${edge.node.slug}/`,
@@ -63,8 +41,10 @@ exports.createPages = ({ graphql, actions }) => {
         })
       })
     })
+
     .catch(error => {
       console.log("Error retrieving contentful data", error)
+      reporter.panicOnBuild(`Error while running GraphQL query.`)
     })
 }
 

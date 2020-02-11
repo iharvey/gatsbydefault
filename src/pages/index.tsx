@@ -1,24 +1,21 @@
-import React from "react"
-
 import Button from "@material-ui/core/Button"
 import Grid from "@material-ui/core/Grid"
 import { Link } from "gatsby"
+import React from "react"
 
-import Hero from "../components/hero"
 import SEO from "../components/seo"
+import Hero from "../containers/hero"
 import Layout from "../layouts/layout"
-import { Body1, H2 } from "../typography/typo"
+import { Body1, H2 } from "../typesetting"
 
 const IndexPage = () => (
   <>
     <Layout>
       <SEO title="Home" />
-
       <Grid container spacing={2}>
         <Grid item xs={6}>
           <Hero />
         </Grid>
-
         <Grid item xs={6}>
           <H2>Title Here</H2>
           <Body1>Welcome to your new Gatsby site.</Body1>

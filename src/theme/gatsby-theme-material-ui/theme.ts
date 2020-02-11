@@ -2,56 +2,40 @@ import { red } from "@material-ui/core/colors"
 import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles"
 import { ThemeOptions } from "@material-ui/core/styles/createMuiTheme"
 
-// export const bodyFont = "'Quattrocento Sans', sans-serif;"
-// export const headerFont = "'Work Sans', sans-serif"
-
-const typographyFairyGates = {
-  headerFont: "'Work Sans', sans-serif",
-  bodyFont: "'Quattrocento Sans', sans-serif;",
-  boldWeight: 700
-}
-
 const typographyHaLantNunito = {
   headerFont: "'Halant', sans-serif",
   bodyFont: "'Nunito Sans', sans-serif;",
   boldWeight: 500
 }
 
-const typographyLoraRoboto = {
-  headerFont: "'Lora', serif",
-  bodyFont: "'Roboto', sans-serif;",
-  boldWeight: 700
-}
-
-
-const typo = typographyHaLantNunito
+const fonts = typographyHaLantNunito
 
 const defaultThemeObj: ThemeOptions = {
   typography: {
-    fontFamily: typo.bodyFont,
+    fontFamily: fonts.bodyFont,
     htmlFontSize: 16,
     fontSize: 14,
     h1: {
-      fontFamily: typo.headerFont,
+      fontFamily: fonts.headerFont,
       fontSize: 4.5,
     },
     h2: {
-      fontFamily: typo.headerFont,
+      fontFamily: fonts.headerFont,
     },
     h3: {
-      fontFamily: typo.headerFont,
+      fontFamily: fonts.headerFont,
     },
     h4: {
-      fontFamily: typo.headerFont,
+      fontFamily: fonts.headerFont,
     },
     h5: {
-      fontFamily: typo.headerFont,
+      fontFamily: fonts.headerFont,
     },
     h6: {
-      fontFamily: typo.headerFont,
+      fontFamily: fonts.headerFont,
     },
     subtitle2: {
-      fontWeight: typo.boldWeight,
+      fontWeight: fonts.boldWeight,
     },
   },
   palette: {
@@ -83,7 +67,6 @@ const theme = {
   },
 }
 
-// export default responsiveFontSizes(theme)
 
 export default responsiveFontSizes(theme)
 

@@ -21,25 +21,11 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_API_ACCESS_TOKEN,
       },
     },
-    // {
-    //   resolve: "gatsby-plugin-eslint",
-    //   options: {
-    //     test: /\.js$|\.jsx$/,
-    //     exclude: /(node_modules|.cache|public)/,
-    //     stages: ["develop"],
-    //     options: {
-    //       emitWarning: true,
-    //       failOnError: false,
-    //     },
-    //   },
-    // },
-
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-top-layout`,
     `gatsby-transformer-remark`,
-    // `gatsby-plugin-typescript`,
     {
       resolve: `gatsby-plugin-ts`,
       options: {
@@ -49,7 +35,7 @@ module.exports = {
         fileName: `types/graphqlTypes.ts`,
         codegen: true,
         codegenDelay: 250,
-        alwaysCheck: false,
+        typeCheck: true,
       }
     },
     {

@@ -1,5 +1,3 @@
-import React from "react"
-
 import Button from "@material-ui/core/Button"
 import Grid from "@material-ui/core/Grid"
 import IconButton from "@material-ui/core/IconButton"
@@ -7,9 +5,10 @@ import { makeStyles } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward"
 import DeleteIcon from "@material-ui/icons/Delete"
+import React from "react"
 
 import Layout from "../layouts/layout"
-import { Body1, H2 } from "../typography"
+import { Body1, H2 } from "../typesetting"
 
 const useStyles = makeStyles(theme => ({
   button: {
